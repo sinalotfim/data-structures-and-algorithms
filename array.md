@@ -1,14 +1,15 @@
-Q: Create an array with this methods
-    1- insert
-    2- insertAt
-    3- removeAt
-    4- indexOf
-    5- reverse
-    6- max
-    7- intersect
+#### Q: Create an array is comprising the following methods:
+- [x] [insert](#a-insert)
+- [x] [insertAt](#a-insertat)
+- [x] [removeAt](#a-removeat)
+- [x] [indexOf](#a-indexof)
+- [x] [reverse](#a-reverse)
+- [x] [max](#a-max)
+- [x] [intersect](#a-intersect)
 
 
-A: Structure of an array
+#### A: Structure of an array
+```Java
 public class Array {
     private int[] items;
     private int count;
@@ -22,8 +23,10 @@ public class Array {
             System.out.println(items[i]);
     }
 }
-
-A: insert method in an Array
+```
+---
+#### A: insert
+```Java
 private void resizeIfRequired() {
     if (items.length == count) {
         int[] newItems = new int[count * 2];
@@ -38,8 +41,10 @@ public void insert(int item) {
 
     items[count++] = item;
 }
-
-A: insertAt method in an array
+```
+---
+#### A: insertAt
+```Java
 public void insertAt(int item, int index) {
     if (index < 0 || index > count)
         throw new IllegalArgumentException();
@@ -52,8 +57,10 @@ public void insertAt(int item, int index) {
     items[index] = item;
     count++;
 }
-
-A: removeAt method in an array
+```
+---
+#### A: removeAt
+```Java
 public void removeAt(int index) {
     if (index < 0 || index >= count)
         throw new IllegalArgumentException();
@@ -63,8 +70,10 @@ public void removeAt(int index) {
 
     count--;
 }
-
-A: indexOf method in an array
+```
+---
+#### A: indexOf
+```Java
 public int indexOf(int item) {
     for (int i = 0; i < count; i++)
         if (items[i] == item)
@@ -72,8 +81,10 @@ public int indexOf(int item) {
 
     return -1;
 }
-
-A: reverse method in an array
+```
+---
+#### A: reverse
+```Java
 public void reverse() {
     int[] newItems = new int[count];
 
@@ -82,8 +93,10 @@ public void reverse() {
 
     items = newItems;
 }
-
-A: max method in an array
+```
+---
+#### A: max
+```Java
 public int max() {
     int max = 0;
     for (int item : items)
@@ -92,8 +105,10 @@ public int max() {
 
     return max;
 }
-
-A: intersect method in an array
+```
+---
+#### A: intersect
+```Java
 public Array intersect(Array other) {
     var intersection = new Array(count);
 
@@ -103,4 +118,4 @@ public Array intersect(Array other) {
 
     return intersection;
 }
-
+```
