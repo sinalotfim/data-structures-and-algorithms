@@ -40,8 +40,20 @@
 
 ---
 ##### Stack
-- Last-In First-Out (LIFO)
-- Can be implemented by using Arrays and Linked lists
+- Last-In First-Out (LIFO).
+- Can be implemented by using Arrays and Linked lists.
+
+| Operation | Approximation |
+| :--- | :---: |
+| Lookup | $O(1)$ |
+| Insert | $O(1)$ |
+| Delete | $O(1)$ |
+
+---
+##### Queue
+- is a line of items. 
+- First-In First-Out (FIFO).
+- Sharing a resource amongst many consumers.
 
 | Operation | Approximation |
 | :--- | :---: |
