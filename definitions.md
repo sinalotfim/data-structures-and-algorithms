@@ -7,7 +7,7 @@
 | Name | Approximation |
 | :--- | :---: |
 | Constant | $(n)$ |
-| Logarithmic | $(log n)$ |
+| Logarithmic | $O(log n)$ |
 | Linear | $O(n)$ |
 | Quadratic | $O(n^2)$ |
 | Exponential | $O(2^n)$ |
@@ -29,7 +29,7 @@
 
 | Operation | Approximation |
 | :--- | :---: |
-| Lookup - **by index** | $O(1)$ |
+| Lookup - **by index** | $O(n)$ |
 | Lookup - **by value** | $O(n)$ |
 | Insert - **at the beginning** | $O(1)$ |
 | Insert - **at the end** | $O(1)$ |

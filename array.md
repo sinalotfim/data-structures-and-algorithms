@@ -14,7 +14,7 @@ public class Array {
     private int[] items;
     private int count;
 
-    public Array(length) {
+    public Array(int length) {
         items = new int[length];
     }
 
@@ -27,8 +27,11 @@ public class Array {
 ---
 #### A: insert
 ```Java
+private boolean isFull() {
+    return items.length == count;
+}
 private void resizeIfRequired() {
-    if (items.length == count) {
+    if (isFull()) {
         int[] newItems = new int[count * 2];
         for (int i = 0; i < count; i++)
             newItems[i] = items[i];
@@ -51,7 +54,7 @@ public void insertAt(int item, int index) {
 
     resizeIfRequired();
 
-    for (int i = count - 1; i >= index; i--)
+    for (int i = index; i >= count; i++)
       items[i + 1] = items[i];
 
     items[index] = item;
