@@ -1,18 +1,19 @@
-Q: Create an linked list with this methods
-    1- addFirst
-    2- addLast
-    3- indexOf
-    4- contains
-    5- removeFirst
-    6- removeLast
-    7- toArray
-    8- reverse
-    9- getKthFromTheEnd
-    10- printMiddle
-    11- hasLoop
-    12- size
+#### Q: Create a linked list is comprising the following methods:
+- [x] [addFirst](#a-addfirst)
+- [x] [addLast](#a-addlast)
+- [x] [indexOf](#a-indexof)
+- [x] [contains](#a-contains)
+- [x] [removeFirst](#a-removefirst)
+- [x] [removeLast](#a-removelast)
+- [x] [toArray](#a-intersect)
+- [x] [reverse](#a-intersect)
+- [x] [getKthFromTheEnd](#a-intersect)
+- [x] [printMiddle](#a-intersect)
+- [x] [hasLoop](#a-intersect)
+- [x] [size](#a-intersect)
 
-
+#### A: Structure of a linked list
+```Java
 A: Structure of a linked list
 public class LinkedList {
     private class Node {
@@ -28,8 +29,10 @@ public class LinkedList {
     private Node last;
     private int size;
 }
-
-A: addFirst method in a linked list
+```
+---
+#### A: addFirst
+```Java
 private boolean isEmpty() {
     return first == null;
 }
@@ -45,8 +48,10 @@ public void addFirst(int item) {
 
     size++;
 }
-  
-A: addLast method in a linked list
+```
+---
+#### A: addLast
+```Java
 public void addLast(int item) {
     var node = new Node(item);
 
@@ -59,26 +64,34 @@ public void addLast(int item) {
 
     size++;
 }
-
-A: indexOf method in a linked list
+```
+---
+#### A: indexOf
+```Java
 public int indexOf(int item) {
     int index = 0;
     var current = first;
     while (current != null) {
-        if (current.value == item) return index;
+        if (current.value == item) 
+            return index;
+
         current = current.next;
         index++;
     }
 
     return -1;
 }
-
-A: contains method in a linked list
+```
+---
+#### A: contains
+```Java
 public boolean contains(int item) {
     return indexOf(item) != -1;
 }
-
-A: removeFirst method in a linked list
+```
+---
+#### A: removeFirst
+```Java
 public void removeFirst() {
     if (isEmpty())
         throw new NoSuchElementException();
@@ -93,8 +106,10 @@ public void removeFirst() {
 
     size--;
 }
-
-A: removeLast method in a linked list
+```
+---
+#### A: removeLast
+```Java
 private Node getPrevious(Node node) {
     var current = first;
     while (current != null) {
@@ -118,6 +133,7 @@ public void removeLast() {
 
     size--;
 }
+```
 
 A: toArray method in a linked list
 public int[] toArray() {
