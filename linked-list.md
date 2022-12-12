@@ -134,8 +134,9 @@ public void removeLast() {
     size--;
 }
 ```
-
-A: toArray method in a linked list
+---
+#### A: toArray
+```Java
 public int[] toArray() {
     int[] array = new int[size];
     var current = first;
@@ -147,8 +148,10 @@ public int[] toArray() {
 
     return array;
 }
+```
 
-A: reverse method in a linked list
+#### A: reverse
+```Java
 public void reverse() {
     if (isEmpty()) return;
 
@@ -165,8 +168,10 @@ public void reverse() {
     last.next = null;
     first = previous;
 }
-
-A: getKthFromTheEnd method in a linked list
+```
+---
+#### A: getKthFromTheEnd
+```Java
 public int getKthFromTheEnd(int k) {
     if (isEmpty())
         throw new IllegalStateException();
@@ -186,6 +191,7 @@ public int getKthFromTheEnd(int k) {
 
     return a.value;
 }
+```
 
 A: printMiddle method in a linked list
 public void printMiddle() {
