@@ -5,12 +5,11 @@
 - [x] [contains](#a-contains)
 - [x] [removeFirst](#a-removefirst)
 - [x] [removeLast](#a-removelast)
-- [x] [toArray](#a-intersect)
-- [x] [reverse](#a-intersect)
-- [x] [getKthFromTheEnd](#a-intersect)
-- [x] [printMiddle](#a-intersect)
-- [x] [hasLoop](#a-intersect)
-- [x] [size](#a-intersect)
+- [x] [toArray](#a-toarray)
+- [x] [reverse](#a-reverse)
+- [x] [getKthFromTheEnd](#a-getkthfromtheend)
+- [x] [printMiddle](#a-printmiddle)
+- [x] [hasLoop](#a-hasloop)
 
 #### A: Structure of a linked list
 ```Java
@@ -192,8 +191,9 @@ public int getKthFromTheEnd(int k) {
     return a.value;
 }
 ```
-
-A: printMiddle method in a linked list
+---
+#### A: printMiddle
+```Java
 public void printMiddle() {
     if (isEmpty())
         throw new IllegalStateException();
@@ -208,8 +208,10 @@ public void printMiddle() {
     if (b == last) System.out.println(a.value);
     else System.out.println(a.value + ", " + a.next.value);
 }
-
-A: hasLoop method in a linked list
+```
+---
+#### A: hasLoop
+```Java
 public boolean hasLoop() {
     var slow = first;
     var fast = first;
@@ -223,8 +225,4 @@ public boolean hasLoop() {
 
     return false;
 }
-
-A: hasLoop method in a linked list
-public int size() {
-    return size;
-}
+```
