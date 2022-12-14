@@ -2,7 +2,6 @@
 - [x] [push](#a-push)
 - [x] [pop](#a-pop)
 - [x] [peek](#a-peek)
-- [x] [isEmpty](#a-isempty)
 
 
 ---
@@ -22,8 +21,11 @@ public class Stack {
 ---
 ##### A: push
 ```Java
+public boolean isFull() {
+    return count == items.length;
+}
 public void push(int item) {
-    if (count == items.length)
+    if (isFull())
         throw new StackOverflowError();
 
     items[count++] = item;
@@ -32,6 +34,9 @@ public void push(int item) {
 ---
 ##### A: pop
 ```Java
+public boolean isEmpty() {
+    return count == 0;
+}
 public int pop() {
     if (count == 0)
         throw new IllegalStateException();
