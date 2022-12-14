@@ -3,7 +3,6 @@
 - [x] [pop](#a-pop)
 - [x] [peek](#a-peek)
 
-
 ---
 ##### A: Structure of a stack
 ```Java
@@ -52,13 +51,5 @@ public int peek() {
         throw new IllegalStateException();
 
     return items[count - 1];
-}
-```
-
----
-##### A: isEmpty
-```Java
-public boolean isEmpty() {
-    return count == 0;
 }
 ```
