@@ -74,3 +74,21 @@
 | Lookup | $O(1)$ |
 | Insert | $O(1)$ |
 | Delete | $O(1)$ |
+---
+#### Hash Tables
+- Usings
+    - Spell checkers
+    - Dictionaries
+    - Compilers
+    - Code Editors
+- Languages
+    - Java &rarr; HashMap
+    - C# &rarr; Dictionary
+    - Python &rarr; Dictionary
+    - JavaScript &rarr; Object
+
+| Operation | Approximation |
+| :--- | :---: |
+| Lookup | $O(1)$ |
+| Insert | $O(1)$ |
+| Delete | $O(1)$ |
