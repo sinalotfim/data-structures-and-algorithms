@@ -45,10 +45,10 @@ private Entry getEntry(int key) {
 
 private LinkedList<Entry> getOrCreateBucket(int key) {
     var index = hash(key);
+    if (entries[index] == null)
+        entries[index] = new LinkedList<Entry>();
+        
     var bucket = entries[index];
-    if (bucket == null)
-        entries[index] = new LinkedList<>();
-
     return bucket;
 }
 
@@ -65,13 +65,13 @@ public void put(int key, String value) {
 ---
 ##### A: remove
 ```Java
-ppublic void remove(int key) {
+public void remove(int key) {
     var entry = getEntry(key);
     if (entry == null)
         throw new IllegalStateException();
     
     getBucket(key).remove(entry);
-  }
+}
 ```
 ---
 ##### A: get
