@@ -7,3 +7,5 @@ List of Items:
   - [Solutions](./stack-solutions.md)
 - [Queues](./queue.md)
   - [Solutions](./queue-solutions.md)
+- [Hash Tables](./hash-table.md)
+  - [Solutions](./hash-table-solutions.md)

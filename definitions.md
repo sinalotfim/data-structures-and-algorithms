@@ -61,7 +61,7 @@
 
 ---
 ##### Queue
-- is a line of items. 
+- A line of items. 
 - First-In First-Out (FIFO).
 - Sharing a resource amongst many consumers.
 - Queue operations
@@ -76,6 +76,10 @@
 | Delete | $O(1)$ |
 ---
 #### Hash Tables
+- store key/value pairs
+- Collision solving
+    - Chaining
+    - Open adressing
 - Usings
     - Spell checkers
     - Dictionaries
