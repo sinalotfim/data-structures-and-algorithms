@@ -25,23 +25,29 @@ public class ArrayQueue {
 ---
 ##### A: enqueue
 ```Java
+public boolean isFull() {
+    return count == items.length;
+}
+
 public void enqueue(int item) {
-    if (isFull()) throw new IllegalStateException();
+    if (isFull()) 
+        throw new IllegalStateException();
 
     items[rear] = item;
     rear = (rear + 1) % items.length;
     count++;
 }
-
-public boolean isFull() {
-    return count == items.length;
-}
 ```
 ---
 ##### A: dequeue
 ```Java
+public boolean isEmpty() {
+    return count == 0;
+}
+
 public int dequeue() {
-    if (isEmpty()) throw new IllegalStateException();
+    if (isEmpty()) 
+        throw new IllegalStateException();
 
     var item = items[front];
     items[front] = 0;
@@ -50,16 +56,14 @@ public int dequeue() {
 
     return item;
 }
-
-public boolean isEmpty() {
-    return count == 0;
-}
 ```
 ---
 ##### A: peek
 ```Java 
 public int peek() {
-    if (isEmpty()) throw new IllegalStateException();
+    if (isEmpty()) 
+        throw new IllegalStateException();
+        
     return items[front];
 }
 ```
