@@ -1,7 +1,7 @@
 ##### Big-O Notation
-- Big-O Notation is a **mathematical notation** that describes the **limiting bahavior** of a function when the argument tends towards a particular value or infinity.
+- Big-O Notation is a **mathematical notation** that describes the **limiting bahavior** of a function when the **argument tends towards a particular value or infinity**.
 - We use Big-O Notation to describe the **performance of an algorithm**.
-- We need opproximation cost of an algorithem in Big-O, so we can **drop constant value**.
+- We need **opproximation cost of an algorithem** in Big-O, so we can **drop constant value**.
 
 ##### Some popular complexity of an algorithm
 | Name | Approximation |
@@ -14,7 +14,7 @@
 
 ---
 ##### Array
-- A list of items store sequentially.
+- A **list of items** store **sequentially**.
 
 | Operation | Approximation |
 | :--- | :---: |
