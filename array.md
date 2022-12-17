@@ -30,6 +30,7 @@ public class Array {
 private boolean isFull() {
     return items.length == count;
 }
+
 private void resizeIfRequired() {
     if (isFull()) {
         int[] newItems = new int[count * 2];
@@ -39,6 +40,7 @@ private void resizeIfRequired() {
         items = newItems;
     }
 }
+
 public void insert(int item) {
     resizeIfRequired();
 
@@ -54,8 +56,8 @@ public void insertAt(int item, int index) {
 
     resizeIfRequired();
 
-    for (int i = index; i >= count; i++)
-      items[i + 1] = items[i];
+    for (int i = count - 1; i >= index; i--)
+        items[i + 1] = items[i];
 
     items[index] = item;
     count++;
@@ -68,7 +70,7 @@ public void removeAt(int index) {
     if (index < 0 || index >= count)
         throw new IllegalArgumentException();
 
-    for (int i = index; i < count; i++)
+    for (int i = index; i < count - 1; i++)
         items[i] = items[i + 1];
 
     count--;
