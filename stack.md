@@ -4,7 +4,7 @@
 - [x] [peek](#a-peek)
 
 ---
-##### A: Structure of a stack
+#### A: Structure of a stack
 ```Java
 public class Stack {
     private int[] items = new int[5];
@@ -18,7 +18,7 @@ public class Stack {
 }
 ```
 ---
-##### A: push
+#### A: push
 ```Java
 public boolean isFull() {
     return items.length == count;
@@ -32,7 +32,7 @@ public void push(int item) {
 }
 ```
 ---
-##### A: pop
+#### A: pop
 ```Java
 public boolean isEmpty() {
     return count == 0;
@@ -46,7 +46,7 @@ public int pop() {
 }
 ```
 ---
-##### A: peek
+#### A: peek
 ```Java
 public int peek() {
     if (isEmpty())
