@@ -6,14 +6,13 @@
 - [x] [removeFirst](#a-removefirst)
 - [x] [removeLast](#a-removelast)
 - [x] [toArray](#a-toarray)
-- [x] [reverse](#a-reverse)
-- [x] [getKthFromTheEnd](#a-getkthfromtheend)
-- [x] [printMiddle](#a-printmiddle)
-- [x] [hasLoop](#a-hasloop)
+- [x] [reverse ✸](#a-reverse)
+- [x] [getKthFromTheEnd ✸](#a-getkthfromtheend)
+- [x] [printMiddle ✸](#a-printmiddle)
+- [x] [hasLoop ✸](#a-hasloop)
 
 #### A: Structure of a linked list
 ```Java
-A: Structure of a linked list
 public class LinkedList {
     private class Node {
         private int value;
@@ -35,6 +34,7 @@ public class LinkedList {
 private boolean isEmpty() {
     return first == null;
 }
+
 public void addFirst(int item) {
     var node = new Node(item);
 
@@ -112,12 +112,15 @@ public void removeFirst() {
 private Node getPrevious(Node node) {
     var current = first;
     while (current != null) {
-        if (current.next == node) return current;
+        if (current.next == node) 
+            return current;
+
         current = current.next;
     }
 
     return null;
 }
+
 public void removeLast() {
     if (isEmpty())
         throw new NoSuchElementException();
@@ -138,6 +141,7 @@ public void removeLast() {
 ```Java
 public int[] toArray() {
     int[] array = new int[size];
+
     var current = first;
     var index = 0;
     while (current != null) {
