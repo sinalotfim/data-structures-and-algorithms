@@ -40,18 +40,17 @@
 
 ---
 ##### Stack
-- Last-In First-Out (LIFO).
-- Can be implemented by using Arrays and Linked lists.
-- Stack can be created by Array or Linked List.
+- Last-In First-Out (**LIFO**).
+- Stack Can be implemented by using **Arrays** and **Linked lists**.
 - Stack operations
     - `push`: add an item on top of the stack.
     - `pop`: remove and return an item on top of the stack.
     - `peek`: return an item on the top of the stack without removing it.
 - Usings
-    - Implement the undo feature.
-    - Build compilers (e.g. syntax checking)
-    - Evaluate expressions (e.g. 1+2*3)
-    - Build navigation (e.g. forward/back)
+    - Implement the **undo feature**.
+    - Build **compilers** (e.g. syntax checking)
+    - **Evaluate expressions** (e.g. 1+2*3)
+    - **Build navigation** (e.g. forward/back)
 
 | Operation | Approximation |
 | :--- | :---: |
