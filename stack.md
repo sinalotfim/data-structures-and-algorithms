@@ -21,8 +21,9 @@ public class Stack {
 ##### A: push
 ```Java
 public boolean isFull() {
-    return count == items.length;
+    return items.length == count;
 }
+
 public void push(int item) {
     if (isFull())
         throw new StackOverflowError();
@@ -36,8 +37,9 @@ public void push(int item) {
 public boolean isEmpty() {
     return count == 0;
 }
+
 public int pop() {
-    if (count == 0)
+    if (isEmpty())
         throw new IllegalStateException();
 
     return items[--count];
@@ -47,7 +49,7 @@ public int pop() {
 ##### A: peek
 ```Java
 public int peek() {
-    if (count == 0)
+    if (isEmpty())
         throw new IllegalStateException();
 
     return items[count - 1];
