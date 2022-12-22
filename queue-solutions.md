@@ -1,6 +1,5 @@
 #### List of solutions can be resolved by Stack
 - [x] [Given an integer K and a queue of integers, write code to reverse the order of the first K elements of the queue.](#q-given-an-integer-k-and-a-queue-of-integers-write-code-to-reverse-the-order-of-the-first-k-elements-of-the-queue)
-- [x] [Build a queue using a linked list from scratch.](#q-build-a-queue-using-a-linked-list-from-scratch)
 - [x] [Build a stack using two queues.](#q-build-a-stack-using-two-queues)
 - [x] [Build a priority queue.](#q-build-a-priority-queue)
 ---
@@ -11,140 +10,69 @@ public class QueueReverser {
         if (k < 0 || k > queue.size())
             throw new IllegalArgumentException();
 
-        Stack<Integer> stack = new Stack<>();
-
-        // Dequeue the first K elements from the queue
-        // and push them onto the stack
+        var stack = new Stack<Integer>();
         for (int i = 0; i < k; i++)
             stack.push(queue.remove());
 
-        // Enqueue the content of the stack at the
-        // back of the queue
         while (!stack.empty())
             queue.add(stack.pop());
 
-        // Add the remaining items in the queue (items
-        // after the first K elements) to the back of the
-        // queue and remove them from the beginning of the queue
         for (int i = 0; i < queue.size() - k; i++)
             queue.add(queue.remove());
     }
 }
 ```
 ---
-##### Q: Build a queue using a linked list from scratch.
+##### Q: Build a stack using two queues.
 ```Java
-public class LinkedListQueue {
-    private class Node {
-        private int value;
-        private Node next;
+public class StackWithTwoQueues {
+    private Queue<Integer> mainQueue = new ArrayDeque<>();
+    private Queue<Integer> tempQueue = new ArrayDeque<>();
+    private int top;
 
-        public Node(int value) {
-            this.value = value;
-        }
+    @Override
+    public String toString() {
+        return mainQueue.toString();
     }
 
-    private Node head;
-    private Node tail;
-    private int count;
-
-    public void enqueue(int item) {
-        var node = new Node(item);
-
-        if (isEmpty())
-            head = tail = node;
-        else {
-            tail.next = node;
-            tail = node;
-        }
-
-        count++;
+    public void push(int item) {
+        mainQueue.add(item);
+        top = item;
     }
 
-    public int dequeue() {
+    public int pop() {
         if (isEmpty())
             throw new IllegalStateException();
 
-        int value;
-        if (head == tail) {
-            value = head.value;
-            head = tail = null;
-        }
-        else {
-            value = head.value;
-            var second = head.next;
-            head.next = null;
-            head = second;
+        while (mainQueue.size() > 1) {
+            top = mainQueue.remove();
+            tempQueue.add(top);
         }
 
-        count--;
+        swapQueues();
 
-        return value;
+        return tempQueue.remove();
     }
 
-    public int peek() {
-        if (isEmpty())
-            throw new IllegalStateException();
+    private void swapQueues() {
+        var temp = mainQueue;
+        mainQueue = tempQueue;
+        tempQueue = temp;
+    }
 
-        return head.value;
+    public boolean isEmpty() {
+        return mainQueue.isEmpty();
     }
 
     public int size() {
-        return count;
-    }
-
-    public boolean isEmpty() {
-        return head == null;
-    }
-
-    public String toString() {
-        ArrayList<Integer> list = new ArrayList<>();
-
-        Node current = head;
-        while (current != null) {
-            list.add(current.value);
-            current = current.next;
-        }
-
-        return list.toString();
-    }
-}
-```
----
-##### Q: Build a stack using two queues.
-```Java
-public class QueueWithTwoStacks {
-    private Stack<Integer> stack1 = new Stack<>();
-    private Stack<Integer> stack2 = new Stack<>();
-
-    public void enqueue(int item) {
-        stack1.push(item);
-    }
-
-    public int dequeue() {
-        if (isEmpty()) throw new IllegalStateException();
-
-        moveStack1ToStack2();
-
-        return stack2.pop();
-    }
-
-    private void moveStack1ToStack2() {
-        if (stack2.isEmpty())
-            while (!stack1.isEmpty())
-                stack2.push(stack1.pop());
+        return mainQueue.size();
     }
 
     public int peek() {
-        if (isEmpty()) throw new IllegalStateException();
+        if (isEmpty())
+            throw new IllegalStateException();
 
-        moveStack1ToStack2();
-
-        return stack2.peek();
-    }
-
-    public boolean isEmpty() {
-        return stack1.isEmpty() && stack2.isEmpty();
+        return top;
     }
 }
 ```
