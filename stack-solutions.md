@@ -20,6 +20,11 @@ public class TwoStacks {
         top2 = capacity;
     }
 
+    @Override
+    public String toString() {
+        return Arrays.toString(items);
+    }
+
     // First Stack
     public boolean isFull1() {
         return top1 + 1 == top2;
@@ -40,7 +45,9 @@ public class TwoStacks {
         if (isEmpty1())
             throw new IllegalStateException();
 
-        return items[top1--];
+        var item = items[top1];
+        items[top1--] = 0;
+        return item;
     }
 
     // Second Stack
@@ -63,12 +70,9 @@ public class TwoStacks {
         if (isEmpty2())
             throw new IllegalStateException();
 
-        return items[top2++];
-    }
-
-    @Override
-    public String toString() {
-        return Arrays.toString(items);
+        var item = items[top2];
+        items[top2++] = 0;
+        return item;
     }
 }
 
