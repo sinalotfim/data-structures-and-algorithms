@@ -95,3 +95,34 @@
 | Lookup | $O(1)$ |
 | Insert | $O(1)$ |
 | Delete | $O(1)$ |
+---
+#### Tree
+- is a Data Structure that **stores elements in a hierachy**.
+- refers its elements as **Node** and **Line** that connects them as **Edges**.
+- Usings
+    - Represents hierachical data
+    - Databases
+    - Autocompletion
+    - Compilers
+    - Compression (JPEG, MP3)
+
+##### Binary Tree
+- is a **Tree** that every node has **maximum two children**.
+- **Left** Node **<** **Root** Node **<** **Right** Node.
+- Traversing Trees
+    - **Breadth first** (Level order)
+    - **Depth first**
+        - | Name | Direction | From To / Type | 
+          | :--- | :---: | :---: |
+          | Pre-order | **Root**, Left, Right | Root to Leafs |
+          | In-order (LRR) | Left, **Root**, Right | ASC |
+          | In-order (RRL) | Right, **Root**, Left | DESC |
+          | Post-order | Left, Right, **Root** | Leafs to Root |
+- Tree Depth: From **Bottom to Top** (**BT**)
+- Tree Height: From **Top to Bottom** (**TB**) -> **1 + max(height(Left), height(Right))**
+
+| Operation | Approximation |
+| :--- | :---: |
+| Lookup | $O(log n)$ |
+| Insert | $O(log n)$ |
+| Delete | $O(log n)$ |
