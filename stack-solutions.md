@@ -4,7 +4,7 @@
 - [x] [Reverse a string](#q-reverse-a-string)
 - [x] [Create a balanced expression](#q-create-a-balanced-expression)
 ---
-#### Implement two stacks in one array
+#### Q: Implement two stacks in one array
 ```Java
 public class TwoStacks {
     private int top1;
