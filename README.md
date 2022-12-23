@@ -1,7 +1,6 @@
 List of Items:
 - [Definitions](./definitions.md)
 - [Arrays](./array.md)
-  <!-- - [Solutions](./array-solutions.md) -->
 - [Linked Lists](./linked-list.md)
 - [Stacks](./stack.md)
   - [Solutions](./stack-solutions.md)
@@ -10,4 +9,5 @@ List of Items:
   - [By Linked List](queue-by-linked.md) 
   - [Solutions](./queue-solutions.md)
 - [Hash Tables](./hash-table.md)
+  - [By linear probing](./hash-table-linear-probing.md)
   - [Solutions](./hash-table-solutions.md)

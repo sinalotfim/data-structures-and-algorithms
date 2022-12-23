@@ -61,7 +61,7 @@
 ---
 ##### Queue
 - A line of items. 
-- First-In First-Out (FIFO).
+- First-In First-Out (**FIFO**).
 - Sharing a resource amongst many consumers.
 - Queue operations
     - `enqueue`: add an item to the back of the queue.
@@ -75,7 +75,7 @@
 | Delete | $O(1)$ |
 ---
 #### Hash Tables
-- store key/value pairs
+- store **key/value pairs**
 - Collision solving
     - Chaining
     - Open adressing
