@@ -1,10 +1,10 @@
 #### Q: Create a hash table is comprising the following methods:
 - [x] [put](#a-put)
-- [x] [remove](#a-remove)
 - [x] [get](#a-get)
+- [x] [remove](#a-remove)
 
 ---
-##### A: Structure of a hash table
+#### A: Structure of a hash table
 ```Java
 public class HashTable {
     private class Entry {
@@ -21,7 +21,7 @@ public class HashTable {
 }
 ```
 ---
-##### A: put
+#### A: put
 ```Java
 private int hash(int key) {
     return key % entries.length;
@@ -63,7 +63,16 @@ public void put(int key, String value) {
 }
 ```
 ---
-##### A: remove
+#### A: get
+```Java 
+public String get(int key) {
+    var entry = getEntry(key);
+
+    return entry == null ? null : entry.value;
+}
+```
+---
+#### A: remove
 ```Java
 public void remove(int key) {
     var entry = getEntry(key);
@@ -71,14 +80,5 @@ public void remove(int key) {
         throw new IllegalStateException();
     
     getBucket(key).remove(entry);
-}
-```
----
-##### A: get
-```Java 
-public String get(int key) {
-    var entry = getEntry(key);
-
-    return entry == null ? null : entry.value;
 }
 ```
