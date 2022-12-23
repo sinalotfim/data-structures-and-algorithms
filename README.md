@@ -11,3 +11,4 @@ List of Items:
 - [Hash Tables](./hash-table.md)
   - [By linear probing](./hash-table-linear-probing.md)
   - [Solutions](./hash-table-solutions.md)
+- [Tree](./binary-tree.md)
