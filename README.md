@@ -13,3 +13,5 @@ List of Items:
   - [Solutions](./hash-table-solutions.md)
 - [Tree and Binary Tree](./binary-tree.md)
 - [AVL Tree](./avl-tree.md)
+- [Heap](./heap.md)
+  - [Solutions](./heap-solutions.md)
