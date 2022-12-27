@@ -126,3 +126,27 @@
 | Lookup | $O(log n)$ |
 | Insert | $O(log n)$ |
 | Delete | $O(log n)$ |
+
+##### Perfect Tree
+- every level except the **last level** is full of nodes.
+##### Balanced Tree
+- height(left) - height(right) <= 1
+##### Right Skewed Binary Tree / Left Skewed Binary Tree
+- the most worst tree is right skewed or left skewed tree, it's not tree, it's like linked list.
+
+##### Self-Balancing Trees
+- AVL Trees (Aelson-Velsky and Landis)
+- Red-Black Trees
+- B-Trees
+- Splay Trees
+- 2-3 Trees
+
+##### AVL Tree
+- is a special kind of **Binary Search Tree** that automatically **rebalance themself** every time we add or remove node.
+- Rotations
+    - Left (LL)
+    - Right (RR)
+    - Left-Right (LR)
+    - Right-Left (RL)
+
+
