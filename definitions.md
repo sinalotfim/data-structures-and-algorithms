@@ -129,6 +129,8 @@
 
 ##### Perfect Tree
 - every level except the **last level** is full of nodes.
+##### Complete Tree
+- every level except the **last level** is **completely filled** and the levels **are filled from the left to the right**. 
 ##### Balanced Tree
 - height(left) - height(right) <= 1
 ##### Right Skewed Binary Tree / Left Skewed Binary Tree
@@ -150,3 +152,23 @@
     - Right-Left (RL)
 
 
+#### Heap
+- it is a Complete Tree
+- it has a Heap Property
+- Heap Property
+    - The root node has the largest or smallest value.
+    - Max Heap Property
+        - the value of every node is greater than or equal to its children.
+    - Min Heap Property
+        - the value of every node is smaller than or equal to its children.
+- Heaps
+    - Sorting (HeapSort)
+    - Graph algorithms (shortest path)
+    - Priority Queues
+    - Finding the kth smallest/largest value
+
+| Operation | Approximation |
+| :--- | :---: |
+| Lookup | $O(log n)$ |
+| Insert | $O(log n)$ |
+| Delete | $O(log n)$ |
