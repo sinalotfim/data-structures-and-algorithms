@@ -172,3 +172,20 @@
 | Lookup | $O(log n)$ |
 | Insert | $O(log n)$ |
 | Delete | $O(log n)$ |
+
+#### Tries
+- is another kind of Trees, but they are not Binary Trees that each child can have serveral nodes, and the name actually comes from re**Trie**val.
+- Another names for Tries are:
+    - Digital
+    - Radix
+    - Prefix Tree
+- important place that you can use Tries is **Autocompletion**.
+- Why not Arrays instead of Tries?
+    - waste a lot of space because a lot of words have the same prefix
+    - looking up word in array is relatively slow.
+
+| Operation | Approximation | |
+| :--- | :---: | :---: |
+| Lookup | $O(L)$ | L = length of word |
+| Insert | $O(L)$ | L = length of word |
+| Delete | $O(L)$ | L = length of word |
