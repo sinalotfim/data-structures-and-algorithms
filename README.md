@@ -15,3 +15,4 @@ List of Items:
 - [AVL Tree](./avl-tree.md)
 - [Heap](./heap.md)
   - [Solutions](./heap-solutions.md)
+- [Trie](./trie.md)
