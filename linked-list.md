@@ -1,4 +1,4 @@
-#### Q: Create a linked list is comprising the following methods:
+#### Q: Create a Linked List is including the following methods:
 - [x] [addFirst](#a-addfirst)
 - [x] [addLast](#a-addlast)
 - [x] [indexOf](#a-indexof)
@@ -109,7 +109,7 @@ public void removeFirst() {
 ---
 #### A: removeLast
 ```Java
-private Node getPrevious(Node node) {
+private Node previous(Node node) {
     var current = first;
     while (current != null) {
         if (current.next == node) 
@@ -128,7 +128,7 @@ public void removeLast() {
     if (first == last) {
       first = last = null;
     } else {
-      var previous = getPrevious(last);
+      var previous = previous(last);
       last = previous;
       last.next = null;
     }
@@ -176,20 +176,20 @@ public void reverse() {
 #### A: getKthFromTheEnd
 ```Java
 public int getKthFromTheEnd(int k) {
+    if (k < 1 || k > size)
+        throw new IllegalStateException();
+
     if (isEmpty())
         throw new IllegalStateException();
 
     var a = first;
     var b = first;
-    for (int i = 0; i < k - 1; i++) {
+    for (int i = 0; i < k - 1; i++)
         b = b.next;
-        if (b == null)
-            throw new IllegalArgumentException();
-    }
 
-    while (b != last) {
-        a = a.next;
+    while(b != last) {
         b = b.next;
+        a = a.next;
     }
 
     return a.value;
@@ -224,7 +224,8 @@ public boolean hasLoop() {
         slow = slow.next;
         fast = fast.next.next;
 
-        if (slow == fast) return true;
+        if (slow == fast) 
+            return true;
     }
 
     return false;
