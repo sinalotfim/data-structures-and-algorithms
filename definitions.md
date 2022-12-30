@@ -1,9 +1,9 @@
-##### Big-O Notation
+#### Big-O Notation
 - Big-O Notation is a **mathematical notation** that describes the **limiting bahavior** of a function when the **argument tends towards a particular value or infinity**.
 - We use Big-O Notation to describe the **performance of an algorithm**.
 - We need **opproximation cost of an algorithem** in Big-O, so we can **drop constant value**.
-
-##### Some popular complexity of an algorithm
+- Some popular complexities of an algorithm 
+ 
 | Name | Approximation |
 | :--- | :---: |
 | Constant | $(n)$ |
@@ -13,7 +13,7 @@
 | Exponential | $O(2^n)$ |
 
 ---
-##### Array
+#### Array
 - A **list of items** store **sequentially**.
 
 | Operation | Approximation |
@@ -24,7 +24,7 @@
 | Delete | $O(n)$ |
 
 ---
-##### Linked List
+#### Linked List
 - A **list of items** that store sequentially and **can grow and shrink automatically**.
 
 | Operation | Approximation |
