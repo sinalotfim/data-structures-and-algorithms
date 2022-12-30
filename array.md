@@ -1,4 +1,4 @@
-#### Q: Create an array is comprising the following methods:
+#### Q: Create an Array is including the following methods:
 - [x] [insert](#a-insert)
 - [x] [insertAt](#a-insertat)
 - [x] [removeAt](#a-removeat)
@@ -21,6 +21,12 @@ public class Array {
     public void print() {
         for(int i = 0; i < count; i++)
             System.out.println(items[i]);
+    }
+
+    @Override
+    public String toString() {
+        int[] newItems = Arrays.copyOfRange(items, 0, count);
+        return Arrays.toString(newItems);
     }
 }
 ```
@@ -56,8 +62,8 @@ public void insertAt(int item, int index) {
 
     resizeIfRequired();
 
-    for (int i = count - 1; i >= index; i--)
-        items[i + 1] = items[i];
+    for (int i = count; i >= index; i--)
+        items[i] = items[i - 1];
 
     items[index] = item;
     count++;
@@ -94,7 +100,7 @@ public void reverse() {
     int[] newItems = new int[count];
 
     for (int i = 0; i < count; i++)
-        newItems[i] = items[count - i - 1];
+        newItems[i] = items[count - 1 - i];
 
     items = newItems;
 }
