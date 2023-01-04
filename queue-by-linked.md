@@ -1,4 +1,4 @@
-#### Q: Create a queue is comprising the following methods:
+#### Q: Create a queue is composed of§ the following methods:
 - [x] [enqueue](#a-enqueue)
 - [x] [dequeue](#a-dequeue)
 - [x] [peek](#a-peek)
@@ -18,10 +18,11 @@ public class LinkedListQueue {
         }
     }
 
+    @Override
     public String toString() {
-        ArrayList<Integer> list = new ArrayList<>();
+        var list = new ArrayList<>();
 
-        Node current = head;
+        var current = head;
         while (current != null) {
             list.add(current.value);
             current = current.next;
@@ -41,9 +42,9 @@ public class LinkedListQueue {
 public void enqueue(int item) {
     var node = new Node(item);
 
-    if (isEmpty())
+    if (isEmpty()) {
         head = tail = node;
-    else {
+    } else {
         tail.next = node;
         tail = node;
     }
@@ -58,12 +59,10 @@ public int dequeue() {
     if (isEmpty())
         throw new IllegalStateException();
 
-    int value;
+    int value = head.value;
     if (head == tail) {
-        value = head.value;
         head = tail = null;
     } else {
-        value = head.value;
         var second = head.next;
         head.next = null;
         head = second;

@@ -1,4 +1,4 @@
-#### Q: Create a queue is comprising the following methods:
+#### Q: Create a queue is composed of the following methods:
 - [x] [enqueue](#a-enqueue)
 - [x] [dequeue](#a-dequeue)
 - [x] [peek](#a-peek)
@@ -8,7 +8,7 @@
 ---
 #### A: Structure of a stack
 ```Java
-public class Queue {
+public class ArrayQueue {
     private int[] items;
     private int rear;
     private int front;
