@@ -1,10 +1,10 @@
 List of Items:
 - [Definitions](./definitions.md)
-- [Arrays](./array.md)
-- [Linked Lists](./linked-list.md)
-- [Stacks](./stack.md)
+- [Array](./array.md)
+- [Linked List](./linked-list.md)
+- [Stack](./stack.md)
   - [Solutions](./stack-solutions.md)
-- Queues
+- Queue
   - [By Array](queue-by-array.md)
   - [By Linked List](queue-by-linked.md) 
   - [Solutions](./queue-solutions.md)
