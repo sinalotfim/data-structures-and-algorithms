@@ -39,7 +39,7 @@
 | Delete - **from the middle** | $O(n)$ |
 
 ---
-##### Stack
+#### Stack
 - Last-In First-Out (**LIFO**).
 - Stack Can be implemented by using **Arrays** and **Linked lists**.
 - Stack operations
@@ -59,7 +59,7 @@
 | Delete | $O(1)$ |
 
 ---
-##### Queue
+#### Queue
 - A line of items. 
 - First-In First-Out (**FIFO**).
 - Sharing a resource amongst many consumers.
