@@ -1,4 +1,4 @@
-#### Q: Create an Array is including the following methods:
+#### Q: Create an Array is composed of the following methods:
 - [x] [insert](#a-insert)
 - [x] [insertAt](#a-insertat)
 - [x] [removeAt](#a-removeat)

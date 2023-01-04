@@ -1,4 +1,4 @@
-#### Q: Create a Linked List is including the following methods:
+#### Q: Create a Linked List is composed of the following methods:
 - [x] [addFirst](#a-addfirst)
 - [x] [addLast](#a-addlast)
 - [x] [indexOf](#a-indexof)
