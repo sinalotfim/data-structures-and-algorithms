@@ -1,9 +1,9 @@
 #### List of solutions can be resolved by Stack
 - [x] [Given an integer K and a queue of integers, write code to reverse the order of the first K elements of the queue.](#q-given-an-integer-k-and-a-queue-of-integers-write-code-to-reverse-the-order-of-the-first-k-elements-of-the-queue)
 - [x] [Build a stack using two queues.](#q-build-a-stack-using-two-queues)
-- [x] [Build a priority queue.](#q-build-a-priority-queue)
+- [x] [Build a priority queue. ✸](#q-build-a-priority-queue)
 ---
-##### Q: Given an integer K and a queue of integers, write code to reverse the order of the first K elements of the queue.
+#### Q: Given an integer K and a queue of integers, write code to reverse the order of the first K elements of the queue.
 ```Java
 public class QueueReverser {
     public static void reverse(Queue<Integer> queue, int k) {
@@ -23,7 +23,7 @@ public class QueueReverser {
 }
 ```
 ---
-##### Q: Build a stack using two queues.
+#### Q: Build a stack using two queues.
 ```Java
 public class StackWithTwoQueues {
     private Queue<Integer> mainQueue = new ArrayDeque<>();
@@ -77,26 +77,32 @@ public class StackWithTwoQueues {
 }
 ```
 ---
-##### Q: Build a priority queue
+#### Q: Build a priority queue
 ```Java
 public class PriorityQueue {
-    private int[] items = new int[5];
+    private int[] items;
     private int count;
+
+    public PriorityQueue(int capacity) {
+        items = new int[capacity];
+    }
 
     @Override
     public String toString() {
-        return Arrays.toString(items);
+        var newItems = Arrays.copyOfRange(items, 0, count);
+        return Arrays.toString(newItems);
     }
 
     public void add(int item) {
-        if (isFull()) throw new IllegalStateException();
+        if (isFull()) 
+            throw new IllegalStateException();
 
         var i = shiftItemsToInsert(item);
         items[i] = item;
         count++;
     }
 
-    public boolean isFull() {
+    private boolean isFull() {
         return count == items.length;
     }
 
