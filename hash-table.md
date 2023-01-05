@@ -1,4 +1,4 @@
-#### Q: Create a hash table is comprising the following methods:
+#### Q: Create a `Hash Table` is composed of the following methods:
 - [x] [put](#a-put)
 - [x] [get](#a-get)
 - [x] [remove](#a-remove)
@@ -48,8 +48,7 @@ private LinkedList<Entry> getOrCreateBucket(int key) {
     if (entries[index] == null)
         entries[index] = new LinkedList<Entry>();
         
-    var bucket = entries[index];
-    return bucket;
+    return entries[index];
 }
 
 public void put(int key, String value) {
