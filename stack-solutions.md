@@ -88,14 +88,15 @@ public class MinStack {
         stack.push(item);
 
         if (minStack.isEmpty()) minStack.push(item);
-        else if (item < minStack.peek())minStack.push(item);
+        else if (item < minStack.peek()) minStack.push(item);
     }
 
     public int pop() {
-        if (stack.isEmpty()) throw new IllegalStateException();
+        if (stack.isEmpty()) 
+            throw new IllegalStateException();
 
         var top = stack.pop();
-        if (minStack.peek() == top) minStack.pop();
+        if (top == minStack.peek()) minStack.pop();
 
         return top;
     }
@@ -134,17 +135,19 @@ public class Expression {
     private final List<Character> rightBrackets = Arrays.asList(')', '>', ']', '}');
 
     public boolean isBalanced(String input) {
-        Stack<Character> stack = new Stack<>();
+        var stack = new Stack<Character>();
 
         for (char ch : input.toCharArray()) {
             if (isLeftBracket(ch))
                 stack.push(ch);
 
             if (isRightBracket(ch)) {
-                if (stack.empty()) return false;
+                if (stack.empty()) 
+                    return false;
 
                 var top = stack.pop();
-                if (!bracketsMatch(top, ch)) return false;
+                if (!bracketsMatch(top, ch)) 
+                    return false;
             }
         }
 
