@@ -47,3 +47,35 @@
 | Merging | $O(1)$ | $O(n)$ |
 | Total | $O(nlog n)$ | $O(nlog n)$ |
 | Space | $O(n)$ | $O(n)$ |
+
+#### Quick Sort
+- it is one of the most used algorithm.
+- it is a fairly efficient algorithm and unlike Merge Sort it doesn't require additional space.
+- use partitioning to make sorting happen.
+- Pivot Selection
+    - Pick randomly.
+    - Use the middle index.
+    - Average of first, middle and last item.
+
+|  | Best | Worst |
+| :--- | :---: | :---: |
+| Partitioning | $O(n)$ | $O(n)$ |
+| Of Times | $O(log n)$ | $O(n)$ |
+| Total | $O(nlog n)$ | $O(n^2)$ |
+| Space | $O(log n)$ | $O(n)$ |
+
+#### Counting Sort
+- use two arrays to make sorting.
+- in the end update Range Array
+- there is a trade-off between time and memory.
+- When to use
+    - allocating extra space is not an issue.
+    - values are positive integers.
+    - most of the values in the range are present. 
+
+|  | Worst |
+| :--- | :---: |
+| Populate Counts | $O(n)$ |
+| Iterate Counts | $O(k)$ |
+| Total | $O(n + k)$ |
+| Space | $O(k)$ |
