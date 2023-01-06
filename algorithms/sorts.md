@@ -1,8 +1,14 @@
 #### Sorts
-- Bubble Sort
-- Selection Sort
-- Insertion Sort
-- Merge Sort
+- Comparison Sorts
+    - [Bubble Sort](#bubble-sort) 
+    - [Selection Sort](#insertion-sort)
+    - [Insertion Sort](#insertion-sort)
+    - [Merge Sort](#merge-sort)
+    - [Quick Sort](#quick-sort)
+- Non-Comparison Sorts
+    - Counting
+    - Bucket
+    - Radix 
 
 ---
 #### Bubble Sort
@@ -112,6 +118,57 @@ public class MergeSort {
 
         while (j < right.length)
             result[k++] = right[j++];
+    }
+}
+```
+---
+#### Quick Sort
+```Java
+public class QuickSort {
+    public void sort(int[] array) {
+        sort(array, 0, array.length - 1);
+    }
+
+    private void sort(int[] array, int start, int end) {
+        if (start >= end)
+            return;
+
+        var boundary = partition(array, start, end);
+
+        sort(array, start, boundary - 1);
+        sort(array, boundary + 1, end);
+    }
+
+    private int partition(int[] array, int start, int end) {
+        var pivot = array[end];
+        var boundary = start - 1;
+        for (var i = start; i <= end; i++)
+            if (array[i] <= pivot)
+                swap(array, i, ++boundary);
+
+        return boundary;
+    }
+
+    private void swap(int[] array, int index1, int index2) {
+        var temp = array[index1];
+        array[index1] = array[index2];
+        array[index2] = temp;
+    }
+}
+```
+---
+### Counting Sort
+```Java
+public class CountingSort {
+    public void sort(int[] array, int max) {
+        int[] counts = new int[max + 1];
+        for (var item : array)
+            counts[item]++;
+
+        var k = 0;
+        for (var i = 0; i < counts.length; i++)
+            for (var j = 0; j < counts[i]; j++)
+                array[k++] = i;
     }
 }
 ```
