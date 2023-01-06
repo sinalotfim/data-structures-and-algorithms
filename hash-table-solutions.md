@@ -41,7 +41,7 @@ public char findFirstRepeatedChar(String str) {
 
 ```
 ---
-##### Q: Find the most repeated element in an array of integers.
+#### Q: Find the most repeated element in an array of integers.
 ```Java
 public int mostFrequent(int[] numbers) {
     Map<Integer, Integer> map = new HashMap<>();
@@ -50,16 +50,16 @@ public int mostFrequent(int[] numbers) {
         map.put(number, count + 1);
     }
 
-    int max = -1;
-    int result = numbers[0];
+    int out = numbers[0];
+    int max = map.get(result);
     for (var item : map.entrySet()) {
         if (item.getValue() > max) {
             max = item.getValue();
-            result = item.getKey();
+            out = item.getKey();
         }
     }
 
-    return result;
+    return out;
 }
 ```
 ---
@@ -83,7 +83,7 @@ public int countPairsWithDiff(int[] numbers, int difference) {
 }
 ```
 ---
-##### Q: Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+#### Q: Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 ```Java
 public int[] twoSum(int[] numbers, int target) {
     Map<Integer, Integer> map = new HashMap<>();
