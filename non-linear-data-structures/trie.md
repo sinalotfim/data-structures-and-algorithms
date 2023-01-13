@@ -1,10 +1,27 @@
-#### Q: Create a Trie is comprising the following methods:
+#### Trie
+- It is **another kind of Trees**, but they are not Binary Trees that each child can have serveral nodes, and the name actually comes from re**Trie**val.
+- Another names for Tries are:
+    - Digital
+    - Radix
+    - Prefix Tree
+- The important place that you can use Tries is **Autocompletion**.
+- Why Don't we use Arrays instead of Tries?
+    - It wastes a lot of space because a lot of words have the same prefix.
+    - Looking up a word in an array is relatively slow.
+
+| Operation | Approximation | |
+| :--- | :---: | :---: |
+| Lookup | $O(L)$ | L = length of word |
+| Insert | $O(L)$ | L = length of word |
+| Delete | $O(L)$ | L = length of word |
+
+---
+#### Q: Create a Trie is composed of the following methods:
 - [x] [insert](#a-insert)
-- [x] [contains](#a-contains)
 - [x] [remove](#a-remove)
+- [x] [contains](#a-contains)
 - [x] [traverse](#a-traverse)
 - [x] [findWords](#a-findwords)
-- [x] [containRecursive](#a-containrecursive)
 - [x] [countWords](#a-countwords)
 - [x] [printWords](#a-printwords)
 - [x] [longestCommonPrefix](#a-longestcommonprefix)
@@ -16,8 +33,8 @@ public class Trie {
 
     private class Node {
         private char value;
-        private HashMap<Character, Node> children = new HashMap<>();
         private boolean isEndOfWord;
+        private HashMap<Character, Node> children = new HashMap<>();
 
         public Node(char value) {
             this.value = value;
@@ -25,31 +42,31 @@ public class Trie {
 
         @Override
         public String toString() {
-            return "value=" + value;
+            return "value: " + value;
         }
 
         public boolean hasChild(char ch) {
             return children.containsKey(ch);
         }
 
-        public void addChild(char ch) {
-            children.put(ch, new Node(ch));
-        }
-
         public Node getChild(char ch) {
             return children.get(ch);
         }
 
-        public Node[] getChildren() {
-            return children.values().toArray(new Node[0]);
+        public void addChild(char ch) {
+            children.put(ch, new Node(ch));
+        }
+
+        public void removeChild(char ch) {
+            children.remove(ch);
         }
 
         public boolean hasChildren() {
             return !children.isEmpty();
         }
 
-        public void removeChild(char ch) {
-            children.remove(ch);
+        public Node[] getChildren() {
+            return children.values().toArray(new Node[0]);
         }
     }
 
@@ -68,23 +85,6 @@ public void insert(String word) {
     }
 
     current.isEndOfWord = true;
-}
-```
----
-#### A: contains
-```Java
-public boolean contains(String word) {
-    if (word == null)
-        return false;
-
-    var current = root;
-    for (var ch : word.toCharArray()) {
-        if (!current.hasChild(ch))
-            return false;
-        current = current.getChild(ch);
-    }
-
-    return current.isEndOfWord;
 }
 ```
 ---
@@ -112,6 +112,47 @@ private void remove(Node root, String word, int index) {
 
     if (!child.hasChildren() && !child.isEndOfWord)
         root.removeChild(ch);
+}
+```
+---
+#### A: contains
+```Java
+// Iterative contains
+public boolean contains(String word) {
+    if (word == null)
+        return false;
+
+    var current = root;
+    for (var ch : word.toCharArray()) {
+        if (!current.hasChild(ch))
+            return false;
+        current = current.getChild(ch);
+    }
+
+    return current.isEndOfWord;
+}
+
+// Recursive contains
+public boolean contains(String word) {
+    if (word == null)
+        return false;
+
+    return contains(root, word, 0);
+}
+
+private boolean contains(Node root, String word, int index) {
+    if (index == word.length())
+        return root.isEndOfWord;
+
+    if (root == null)
+        return false;
+
+    var ch = word.charAt(index);
+    var child = root.getChild(ch);
+    if (child == null)
+        return false;
+
+    return contains(child, word, index + 1);
 }
 ```
 ---
@@ -173,31 +214,6 @@ private void findWords(Node root, String prefix, List<String> words) {
 
     for (var child : root.getChildren())
       findWords(child, prefix + child.value, words);
-}
-```
----
-#### A: containRecursive
-```Java
-public boolean containsRecursive(String word) {
-    if (word == null)
-        return false;
-
-    return containsRecursive(root, word, 0);
-}
-
-private boolean containsRecursive(Node root, String word, int index) {
-    if (index == word.length())
-        return root.isEndOfWord;
-
-    if (root == null)
-        return false;
-
-    var ch = word.charAt(index);
-    var child = root.getChild(ch);
-    if (child == null)
-        return false;
-
-    return containsRecursive(child, word, index + 1);
 }
 ```
 ---
