@@ -1,6 +1,6 @@
 #### Stack
 - Last-In First-Out (**LIFO**).
-- Stack Can be implemented by using **Arrays** and **Linked lists**.
+- Stack can be implemented by using **Arrays** and **Linked lists**.
 - Stack operations
     - `push`: add an item on top of the stack.
     - `pop`: remove and return an item on top of the stack.
