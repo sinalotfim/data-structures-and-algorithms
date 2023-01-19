@@ -8,14 +8,13 @@
     - [Bucket Sort](#bucket-sort)
 - Non-Comparison Sorts
     - [Counting](#counting-sort)
-    - [Bucket](#bubble-sort)
-    - Radix 
+    - [Bucket](#bubble-sort) 
 
 ---
 #### Bubble Sort
-- We **scan** the array **from left to right**.
-- **after each iteration/path** `next largest item` **moves** to its correct position.
-- comparisons will be **amount of items count**.
+- **Scan** the array **from left to right**.
+- **After each iteration/path** `next largest item` **moves** to its correct position.
+- Comparisons will be **amount of items count**.
  
 |  | Best | Worst |
 | :--- | :---: | :---: |
@@ -44,17 +43,17 @@ public class BubbleSort {
 
 
 
-    private void swap(int[] array, int index1, int index2) {
-        var temp = array[index1];
-        array[index1] = array[index2];
-        array[index2] = temp;
+    private void swap(int[] array, int firstIndex, int secondIndex) {
+        var temp = array[firstIndex];
+        array[firstIndex] = array[secondIndex];
+        array[secondIndex] = temp;
     }
 }
 ```
 ---
 #### Selection Sort
-- **like Bubble Sort** we need multiple pathes to sort an array.
-- **in each path** we should find the `next smallest item` and **moves** it to correct position.
+- **Like Bubble Sort**, we need multiple pathes to sort an array.
+- **In each path**, we should find the `next smallest item` and **moves** it to correct position.
 
 |  | Best | Worst |
 | :--- | :---: | :---: |
@@ -68,26 +67,27 @@ public class SelectionSort {
     public void sort(int[] array) {
         for (var i = 0; i < array.length; i++) {
             var minIndex = i;
-            for (var j = i; j < array.length; j++)
+            for (var j = i; j < array.length; j++) {
                 if (array[j] < array[minIndex])
                     minIndex = j;
+            }
       
             swap(array, minIndex, i);
         }
     }
 
-    private void swap(int[] array, int index1, int index2) {
-        var temp = array[index1];
-        array[index1] = array[index2];
-        array[index2] = temp;
+    private void swap(int[] array, int firstIndex, int secondIndex) {
+        var temp = array[firstIndex];
+        array[firstIndex] = array[secondIndex];
+        array[secondIndex] = temp;
     }
 }
 ```
 ---
 #### Insertion Sort
-- every time you **get an item**, you **insert it** in the correct position.
-- in the first item, we assume it is in the correct position.
-- type of this sort is **based on shifting, not swapping**.
+- Every time you **get an item**, you **insert it** in the correct position.
+- At the first item, we assume it is in the correct position.
+- Type of this sort is **based on shifting, not swapping**.
 
 |  | Best | Worst |
 | :--- | :---: | :---: |
@@ -114,14 +114,14 @@ public class InsertionSort {
 ```
 ---
 #### Merge Sort
-- it's called **Divide and Conquer algorithm**.
-- it works by recursively dividing a problem into smaller sub-problems until they become easy to solve then combine the solutions to build the solution to the original problem.
+- It's called **Divide and Conquer algorithm**.
+- It works by **recursively dividing a problem into smaller sub-problems** until they become easy to solve then **combine the solutions** to build the solution to the original problem.
 
 |  | Best | Worst |
 | :--- | :---: | :---: |
-| Dividing | $O(log n)$ | $O(log n)$ |
+| Dividing | $O(\log n)$ | $O(\log n)$ |
 | Merging | $O(n)$ | $O(n)$ |
-| **Total** | $O(nlog n)$ | $O(nlog n)$ |
+| **Total** | $O(n\log n)$ | $O(n\log n)$ |
 | `Space` | $O(n)$ | $O(n)$ |
 
 ```Java
@@ -166,9 +166,9 @@ public class MergeSort {
 ```
 ---
 #### Quick Sort
-- it is one of the **most used algorithm**.
-- it is a **fairly efficient algorithm** and **unlike Merge Sort** it doesn't require additional space.
-- **use partitioning** to make sorting happen.
+- It is one of the **most used algorithm**.
+- It is a **fairly efficient algorithm** and **unlike Merge Sort** it doesn't require additional space.
+- **Use partitioning** to make sorting happen.
 - Pivot Selection
     - Pick randomly.
     - Use the middle index.
@@ -177,9 +177,9 @@ public class MergeSort {
 |  | Best | Worst |
 | :--- | :---: | :---: |
 | Partitioning | $O(n)$ | $O(n)$ |
-| Of Times | $O(log n)$ | $O(n)$ |
-| **Total** | $O(nlog n)$ | $O(n^2)$ |
-| `Space` | $O(log n)$ | $O(n)$ |
+| Of Times | $O(\log n)$ | $O(n)$ |
+| **Total** | $O(n\log n)$ | $O(n^2)$ |
+| `Space` | $O(\log n)$ | $O(n)$ |
 
 ```Java
 public class QuickSort {
@@ -200,30 +200,31 @@ public class QuickSort {
     private int partition(int[] array, int start, int end) {
         var pivot = array[end];
         var boundary = start - 1;
-        for (var i = start; i <= end; i++)
+        for (var i = start; i <= end; i++) {
             if (array[i] <= pivot)
                 swap(array, i, ++boundary);
+        }
 
         return boundary;
     }
 
-    private void swap(int[] array, int index1, int index2) {
-        var temp = array[index1];
-        array[index1] = array[index2];
-        array[index2] = temp;
+    private void swap(int[] array, int firstIndex, int secondIndex) {
+        var temp = array[firstIndex];
+        array[firstIndex] = array[secondIndex];
+        array[secondIndex] = temp;
     }
 }
 ```
 ---
 #### Counting Sort
-- **use two arrays** to make sorting.
-- in the end **update Range Array**.
-- there is a **trade-off between time and memory**.
-- it's just **for integers**.
+- **Use two arrays** to make sorting.
+- In the end **update Range Array**.
+- There is a **trade-off between time and memory**.
+- It's just **for integers**.
 - When to use
-    - allocating extra space is not an issue.
-    - values are positive integers.
-    - most of the values in the range are present. 
+    - Allocating extra space is not an issue.
+    - Values are positive integers.
+    - Most of the values in the range are present. 
 
 |  | Worst |
 | :--- | :---: |
@@ -235,7 +236,7 @@ public class QuickSort {
 ```Java
 public class CountingSort {
     public void sort(int[] array, int max) {
-        int[] counts = new int[max + 1];
+        var counts = new int[max + 1];
         for (var item : array)
             counts[item]++;
 
@@ -248,7 +249,7 @@ public class CountingSort {
 ```
 ---
 #### Bucket Sort
-- distribute items in a number of buckets, then buckets by another sorting algorithm and in the end combine them.
+- **Distribute** items **in a number of buckets**, then buckets by another sorting algorithm and in the end combine them.
 
 | Time | Best | Worst |
 | :--- | :---: | :---: |
