@@ -1,13 +1,14 @@
-#### Searching Algorithms
-- Linear Search
-- Binary Search
-- Ternary Search
-- Jump Search
-- Exponentional Search
+#### Searching Algorithm
+- [Searching Algorithm](#searching-algorithm)
+- [Linear Search](#linear-search)
+- [Binary Search](#binary-search)
+- [Ternary Search](#ternary-search)
+- [Jump Search](#jump-search)
+- [Exponentional Search](#exponentional-search)
 
 ---
 #### Linear Search
-- we iterate over a list, inspect each item, if find it we return index otherwise return -1.
+- **Iterate** over a list, inspect each item, if find it we return index otherwise return -1.
 
 |  | Best | Worst |
 | :--- | :---: | :---: |
@@ -24,8 +25,8 @@ public int linearSearch(int[] array, int target) {
 ```  
 ---
 #### Binary Search
-- it is faster than Linear Search.
-- only works on sorted list.
+- It is **faster than Linear Search**.
+- Only **works** on **sorted list**.
 
 |  | Recursive | Iterative |
 | :--- | :---: | :---: |
