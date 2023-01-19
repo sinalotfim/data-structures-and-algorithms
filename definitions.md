@@ -7,7 +7,7 @@
 | Name | Approximation |
 | :--- | :---: |
 | Constant | $(n)$ |
-| Logarithmic | $O(log n)$ |
+| Logarithmic | $O(\log n)$ |
 | Linear | $O(n)$ |
 | Quadratic | $O(n^2)$ |
 | Exponential | $O(2^n)$ |
