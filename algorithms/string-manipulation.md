@@ -18,9 +18,10 @@ public static int countVowels(String str) {
 
     int count = 0;
     String vowels = "aeiou";
-    for (var ch : str.toLowerCase().toCharArray())
+    for (var ch : str.toLowerCase().toCharArray()) {
         if (vowels.indexOf(ch) != -1)
             count++;
+    }
 
     return count;
 }
@@ -143,7 +144,7 @@ public static boolean areAnagrams(String first, String second) {
 }
 
 // O(n)
-public static boolean areAnagram2(String first, String second) {
+public static boolean areAnagrams(String first, String second) {
     if (first == null || second == null)
         return false;
 
