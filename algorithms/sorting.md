@@ -1,14 +1,14 @@
 #### Sorting Algorithms
 - Comparison Sorts
-    - [Bubble Sort](#bubble-sort) 
-    - [Selection Sort](#insertion-sort)
-    - [Insertion Sort](#insertion-sort)
-    - [Merge Sort](#merge-sort)
-    - [Quick Sort](#quick-sort)
-    - [Bucket Sort](#bucket-sort)
+    - [x] [Bubble Sort](#bubble-sort) 
+    - [x] [Selection Sort](#insertion-sort)
+    - [x] [Insertion Sort](#insertion-sort)
+    - [x] [Merge Sort](#merge-sort)
+    - [x] [Quick Sort](#quick-sort)
+    - [x] [Bucket Sort](#bucket-sort)
 - Non-Comparison Sorts
-    - [Counting](#counting-sort)
-    - [Bucket](#bubble-sort) 
+    - [x] [Counting](#counting-sort)
+    - [x] [Bucket](#bubble-sort) 
 
 ---
 #### Bubble Sort
