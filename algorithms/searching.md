@@ -1,14 +1,13 @@
-#### Searching Algorithm
-- [Searching Algorithm](#searching-algorithm)
-- [Linear Search](#linear-search)
-- [Binary Search](#binary-search)
-- [Ternary Search](#ternary-search)
-- [Jump Search](#jump-search)
-- [Exponentional Search](#exponentional-search)
+#### Searching Algorithms
+- [x] [Linear Search](#linear-search)
+- [x] [Binary Search](#binary-search)
+- [x] [Ternary Search](#ternary-search)
+- [x] [Jump Search](#jump-search)
+- [x] [Exponentional Search](#exponentional-search)
 
 ---
 #### Linear Search
-- **Iterate** over a list, inspect each item, if find it we return index otherwise return -1.
+- **Iterate** over a list, inspect each item, if find it, **returns index otherwise return -1**.
 
 |  | Best | Worst |
 | :--- | :---: | :---: |
@@ -16,9 +15,10 @@
 
 ```Java
 public int linearSearch(int[] array, int target) {
-    for (var i = 0; i < array.length; i++)
+    for (var i = 0; i < array.length; i++) {
         if (array[i] == target)
             return i;
+    }
 
     return -1;
 }
@@ -34,35 +34,14 @@ public int linearSearch(int[] array, int target) {
 | Space Complexity | $O(\log n)$ | $O(1)$ |
 
 ```Java
-public int binarySearchRec(int[] array, int target) {
-    return binarySearchRec(array, target, 0, array.length - 1);
-}
-
-private int binarySearchRec(
-    int[] array, int target, int left, int right) {
-
-    if (right < left)
-        return -1;
-
-    int middle = (left + right) / 2;
-
-    if (array[middle] == target)
-        return middle;
-
-    if (target < array[middle])
-        return binarySearchRec(array, target, left, middle - 1);
-
-    return binarySearchRec(array, target, middle + 1, right);
-}
-
-public int binarySearch(int[] array, int target) {
+public int binarySearchIter(int[] array, int target) {
     var left = 0;
     var right = array.length - 1;
 
     while (left <= right) {
         var middle = (left + right) / 2;
 
-        if (array[middle] == target)
+        if (target == array[middle])
             return middle;
 
         if (target < array[middle])
@@ -73,12 +52,31 @@ public int binarySearch(int[] array, int target) {
 
     return -1;
 }
+
+public int binarySearchRec(int[] array, int target) {
+    return binarySearchRec(array, target, 0, array.length - 1);
+}
+
+private int binarySearchRec(int[] array, int target, int left, int right) {
+    if (left > right)
+        return -1;
+
+    int middle = (left + right) / 2;
+
+    if (target == array[middle])
+        return middle;
+
+    if (target < array[middle])
+        return binarySearchRec(array, target, left, middle - 1);
+
+    return binarySearchRec(array, target, middle + 1, right);
+}
 ```
 ---
 #### Ternary Search
-- similar to Binary Search
-- instead of dividing the list into the half at every step, divide into three parts.
-- Binary Search is faster than Ternay Search.
+- **Similar to Binary Search**
+- Instead of dividing the list into the half at every step, **divide into three parts**.
+- **Binary Search is faster than Ternay Search**.
 
 |  | Binary Search | Ternary Search |
 | :--- | :---: | :---: |
@@ -90,9 +88,7 @@ public int ternarySearch(int[] array, int target) {
     return ternarySearch(array, target, 0, array.length - 1);
 }
 
-private int ternarySearch(
-    int[] array, int target, int left, int right) {
-
+private int ternarySearch(int[] array, int target, int left, int right) {
     if (left > right)
         return -1;
 
@@ -100,10 +96,10 @@ private int ternarySearch(
     int mid1 = left + partitionSize;
     int mid2 = right - partitionSize;
 
-    if (array[mid1] == target)
+    if (target == array[mid1])
         return mid1;
 
-    if (array[mid2] == target)
+    if (target == array[mid2])
         return mid2;
 
     if (target < array[mid1])
@@ -117,9 +113,9 @@ private int ternarySearch(
 ```
 ---
 #### Jump Search
-- improvement of Linear Search.
-- it's not as fast as Binary Search.
-- we divide a list into a few blocks, instead of checking every time, we jump to the block where target item may exist, then we do a Linear Search in that block.
+- **Improvement of Linear Search**.
+- It's **not as fast as Binary Search**.
+- Divide a list into a few blocks, instead of checking every time, we jump to the block where target item may exist, then **we do a Linear Search in that block**.
 
 |  | Jump Search |
 | :--- | :---: |
@@ -129,26 +125,27 @@ private int ternarySearch(
 public int jumpSearch(int[] array, int target) {
     int blockSize = (int) Math.sqrt(array.length);
     int start = 0;
-    int next = blockSize;
+    int end = blockSize;
 
-    while (start < array.length && array[next - 1] < target) {
-        start = next;
-        next += blockSize;
-        if (next > array.length)
-            next = array.length;
+    while (start < array.length && target > array[end - 1]) {
+        start = end;
+        end += blockSize;
+        if (end > array.length)
+            end = array.length;
     }
 
-    for (var i = start; i < next; i++)
-        if (array[i] == target)
+    for (var i = start; i < end; i++) {
+        if (target == array[i])
             return i;
+    }
 
     return -1;
 }
 ```
 ---
 #### Exponentional Search
-- start with a small range of a list, and see if the target item is in that range or not, if not, double the range each step.
-- if it find range, then do the Binary Search is that range.
+- Starts with a small range of a list, and see if the target item is in that range or not, if not, **double the range each step**.
+- If it find range, then **do the Binary Search is that range**.
 
 |  | Jump Search | |
 | :--- | :---: | :---: | 
@@ -156,9 +153,8 @@ public int jumpSearch(int[] array, int target) {
 
 ```Java
 public int exponentialSearch(int[] array, int target) {
-
     int bound = 1;
-    while (bound < array.length && array[bound] < target)
+    while (bound < array.length && target > array[bound])
         bound *= 2;
 
     int left = bound / 2;
