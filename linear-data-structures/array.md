@@ -14,6 +14,7 @@
 - [x] [insertAt](#a-insertat)
 - [x] [removeAt](#a-removeat)
 - [x] [indexOf](#a-indexof)
+- [x] [contains](#a-contains)
 - [x] [reverse](#a-reverse)
 - [x] [max](#a-max)
 - [x] [intersect](#a-intersect)
@@ -26,6 +27,9 @@ public class Array {
     private int count;
 
     public Array(int length) {
+        if (length < 0)
+            throw new IllegalArgumentException();
+
         items = new int[length];
     }
 
@@ -60,7 +64,6 @@ private void resizeIfRequired() {
 
 public void insert(int item) {
     resizeIfRequired();
-
     items[count++] = item;
 }
 ```
@@ -73,7 +76,7 @@ public void insertAt(int item, int index) {
 
     resizeIfRequired();
 
-    for (int i = count; i >= index; i--)
+    for (int i = count; i > index; i--)
         items[i] = items[i - 1];
 
     items[index] = item;
@@ -97,11 +100,19 @@ public void removeAt(int index) {
 #### A: indexOf
 ```Java
 public int indexOf(int item) {
-    for (int i = 0; i < count; i++)
+    for (int i = 0; i < count; i++) {
         if (items[i] == item)
             return i;
+    }
 
     return -1;
+}
+```
+---
+#### A: contains
+```Java
+public boolean contains(int item) {
+    return indexOf(item) != -1;
 }
 ```
 ---
@@ -109,7 +120,6 @@ public int indexOf(int item) {
 ```Java
 public void reverse() {
     int[] newItems = new int[count];
-
     for (int i = 0; i < count; i++)
         newItems[i] = items[count - 1 - i];
 
@@ -121,9 +131,10 @@ public void reverse() {
 ```Java
 public int max() {
     int max = 0;
-    for (int item : items)
+    for (int item : items) {
         if (item > max)
             max = item;
+    }
 
     return max;
 }
@@ -134,9 +145,10 @@ public int max() {
 public Array intersect(Array other) {
     var intersection = new Array(count);
 
-    for (int item : items)
-        if (other.indexOf(item) >= 0)
+    for (int item : items) {
+        if (other.contains(item))
             intersection.insert(item);
+    }
 
     return intersection;
 }
