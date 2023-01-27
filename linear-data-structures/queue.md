@@ -1,11 +1,18 @@
 #### Queue
 - A line of items. 
-- First-In First-Out (**FIFO**).
+- A queue is a linear data structure that follows the principle of **First In First Out (FIFO)**. This means the first element inserted inside the queue is removed first.
 - Sharing a resource amongst many consumers.
-- Queue operations
-    - `enqueue`: add an item to the back of the queue.
-    - `dequeue`: remove an item from the front of the queue
-    - `peek`: get the item at the front of the queue without removing item.
+
+#### FIFO Principle of Stack
+In programming terms, putting items in the queue is called <mark>enqueue</mark>, and removing items from the queue is called <mark>dequeue</mark>.
+![Big-O Notation](./assets/../../assets/queue-fifo.webp)
+
+#### Basic Operations of Queue
+1. `enqueue`: Add an element to the end of the queue.
+2. `dequeue`: Remove an element from the front of the queue.
+3. `peek`: Get the value of the front of the queue without removing it.
+4. `isEmpty`: Check if the queue is empty.
+5. `isFull`: Check if the queue is full.
 
 | Operation | Approximation |
 | :--- | :---: |
@@ -19,18 +26,22 @@
 - [x] [dequeue](#a-dequeue)
 - [x] [peek](#a-peek)
 - [x] [isEmpty](#a-isempty)
+- [x] [isFull](#a-isfull)
 - [x] [size](#a-size)
 
 ---
 #### A: Structure of a stack
 ```Java
-public class ArrayQueue {
+public class Queue {
     private int[] items;
     private int rear;
     private int front;
     private int count;
 
-    public ArrayQueue(int capacity) {
+    public Queue(int capacity) {
+        if (capacity < 0)
+            throw new IllegalArgumentException();
+
         items = new int[capacity];
     }
 
@@ -43,10 +54,6 @@ public class ArrayQueue {
 ---
 #### A: enqueue
 ```Java
-public boolean isFull() {
-    return count == items.length;
-}
-
 public void enqueue(int item) {
     if (isFull()) 
         throw new IllegalStateException();
@@ -86,6 +93,13 @@ public int peek() {
 ```Java
 public boolean isEmpty() {
     return count == 0;
+}
+```
+---
+#### A: isFull
+```Java
+public boolean isFull() {
+    return count == items.length;
 }
 ```
 ---
