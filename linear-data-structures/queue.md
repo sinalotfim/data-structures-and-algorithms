@@ -1,7 +1,11 @@
 #### Queue
 - A line of items. 
 - A queue is a linear data structure that follows the principle of **First In First Out (FIFO)**. This means the first element inserted inside the queue is removed first.
-- Sharing a resource amongst many consumers.
+- Usages
+  - CPU scheduling, Disk Scheduling
+  - When data is transferred asynchronously between two processes.The queue is used for synchronization. For example: IO Buffers, pipes, file IO, etc
+  - Handling of interrupts in real-time systems.
+  - Call Center phone systems use Queues to hold people calling them in order. 
 
 #### FIFO Principle of Stack
 In programming terms, putting items in the queue is called <mark>enqueue</mark>, and removing items from the queue is called <mark>dequeue</mark>.
