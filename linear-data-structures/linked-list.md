@@ -1,5 +1,42 @@
-#### Linked List
+#### Linked list Data Structure
 - A **list of items** that store sequentially and **can grow and shrink automatically**.
+- A linked list is a linear data structure that includes a series of connected nodes. 
+- Each node stores **the data** and **the address of the next node**.
+- The power of a linked list comes from the ability to **break the chain and rejoin** it. 
+- Usages
+  - Dynamic memory allocation
+  - Implemented in stack and queue
+  - In undo functionality of softwares
+  - Hash tables, Graphs
+
+![Linked List](./assets/../../assets/linked-list.webp)
+
+#### Basic Operations of Queue
+1. `Traversal`: Access each element of the linked list.
+2. `Insertion`: Adds a new element to the linked list.
+   - `addFirst`: Insert at the beginning.
+   - `addLast`: Insert at the End.
+   - `addMiddle`: Insert at the Middle.
+3. `Deletion`: Removes the existing elements.
+   - `deleteFirst`: Delete from beginning.
+   - `deleteLast`: Delete from end.
+   - `deleteMiddle`: Delete from middle.
+4. `Search`: Find a node in the linked list.
+5. `Sort`: Sort the nodes of the linked list.
+
+#### Types of Linked List
+1. `Singly Linked List`: 
+   - Each node has data and a pointer to the next node.
+![Linked List](./assets/../../assets/singly-linked-list.webp)
+1. `Doubly Linked List`: 
+   - We add a pointer to the previous node in a doubly-linked list.
+   - Thus, we can go in either direction: forward or backward.
+![Linked List](./assets/../../assets/doubly-linked-list.webp)
+1. `Circular Linked List`: 
+   - A circular linked list is a variation of a linked list in which the last element is linked to the first element. 
+   - This forms a circular loop.
+   - A circular linked list can be either singly linked or doubly linked.
+![Linked List](./assets/../../assets/circular-linked-list.webp)  
 
 | Operation | Approximation |
 | :--- | :---: |
@@ -11,6 +48,7 @@
 | Delete - **from the beginning**| $O(1)$ |
 | Delete - **from the end** | $O(n)$ |
 | Delete - **from the middle** | $O(n)$ |
+| Space Complexity | $O(n)$ |
 
 ---
 #### Q: Create a Linked List is composed of the following methods:
