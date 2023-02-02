@@ -1,12 +1,11 @@
-#### Linked list Data Structure
-- A **list of items** that store sequentially and **can grow and shrink automatically**.
-- A linked list is a linear data structure that includes a series of connected nodes. 
-- Each node stores **the data** and **the address of the next node**.
-- The power of a linked list comes from the ability to **break the chain and rejoin** it. 
+#### Linked List Data Structure
+- A linked list is a **linear data structure** that includes a series of connected nodes, and each node stores **the data** and **the address of the next node**.
+- A linke list is a **list of items** that **store sequentially** and **can grow and shrink automatically**.
+- **The power of a linked list** comes from the ability to **break the chain and rejoin** it. 
 - Usages
   - Dynamic memory allocation
   - Implemented in stack and queue
-  - In undo functionality of softwares
+  - In **undo functionality** of softwares
   - Hash tables, Graphs
 
 ![Linked List](./assets/../../assets/linked-list.webp)
@@ -29,8 +28,7 @@
    - Each node has data and a pointer to the next node.
 ![Linked List](./assets/../../assets/singly-linked-list.webp)
 1. `Doubly Linked List`: 
-   - We add a pointer to the previous node in a doubly-linked list.
-   - Thus, we can go in either direction: forward or backward.
+   - We add a pointer to the previous node in a doubly-linked list, thus, we can go in either direction: forward or backward.
 ![Linked List](./assets/../../assets/doubly-linked-list.webp)
 1. `Circular Linked List`: 
    - A circular linked list is a variation of a linked list in which the last element is linked to the first element. 
@@ -58,6 +56,7 @@
 - [x] [contains](#a-contains)
 - [x] [removeFirst](#a-removefirst)
 - [x] [removeLast](#a-removelast)
+- [x] [isEmpty](#a-isempty)
 - [x] [toArray](#a-toarray)
 - [x] [reverse ✸](#a-reverse)
 - [x] [getKthFromTheEnd ✸](#a-getkthfromtheend)
@@ -84,10 +83,6 @@ public class LinkedList {
 ---
 #### A: addFirst
 ```Java
-private boolean isEmpty() {
-    return first == null;
-}
-
 public void addFirst(int item) {
     var node = new Node(item);
 
@@ -190,13 +185,20 @@ public void removeLast() {
 }
 ```
 ---
+####
+```Java
+public boolean isEmpty() {
+    return first == null;
+}
+```
+---
 #### A: toArray
 ```Java
 public int[] toArray() {
     int[] array = new int[size];
 
-    var current = first;
     var index = 0;
+    var current = first;
     while (current != null) {
         array[index++] = current.value;
         current = current.next;
@@ -237,7 +239,7 @@ public int getKthFromTheEnd(int k) {
 
     var a = first;
     var b = first;
-    for (int i = 0; i < k - 1; i++)
+    for (int i = 0; i < k; i++)
         b = b.next;
 
     while(b != last) {
@@ -272,11 +274,9 @@ public void printMiddle() {
 public boolean hasLoop() {
     var slow = first;
     var fast = first;
-
     while (fast != null && fast.next != null) {
         slow = slow.next;
         fast = fast.next.next;
-
         if (slow == fast) 
             return true;
     }
