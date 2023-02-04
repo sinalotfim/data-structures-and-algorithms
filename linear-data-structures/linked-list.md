@@ -1,69 +1,75 @@
-#### Linked List Data Structure
-- A linked list is a **linear data structure** that includes a series of connected nodes, and each node stores **the data** and **the address of the next node**.
-- A linke list is a **list of items** that **store sequentially** and **can grow and shrink automatically**.
-- **The power of a linked list** comes from the ability to **break the chain and rejoin** it. 
-- Usages
-  - Dynamic memory allocation
-  - Implemented in stack and queue
-  - In **undo functionality** of softwares
-  - Hash tables, Graphs
+#### Linked List
+
+-   A linked list is a **linear data structure** that includes a series of connected nodes, and each node stores **the data** and **the address of the next node**.
+-   A linke list is a **list of items** that **store sequentially** and **can grow and shrink automatically**.
+-   **The power of a linked list** comes from the ability to **break the chain and rejoin** it.
+-   Usages
+    -   Dynamic memory allocation
+    -   Implemented in stack and queue
+    -   In **undo functionality** of softwares
+    -   Hash tables, Graphs
 
 ![Linked List](./assets/../../assets/linked-list.webp)
 
 #### Basic Operations of Queue
+
 1. `Traversal`: Access each element of the linked list.
 2. `Insertion`: Adds a new element to the linked list.
-   - `addFirst`: Insert at the beginning.
-   - `addLast`: Insert at the End.
-   - `addMiddle`: Insert at the Middle.
+    - `addFirst`: Insert at the beginning.
+    - `addLast`: Insert at the End.
+    - `addMiddle`: Insert at the Middle.
 3. `Deletion`: Removes the existing elements.
-   - `deleteFirst`: Delete from beginning.
-   - `deleteLast`: Delete from end.
-   - `deleteMiddle`: Delete from middle.
+    - `deleteFirst`: Delete from beginning.
+    - `deleteLast`: Delete from end.
+    - `deleteMiddle`: Delete from middle.
 4. `Search`: Find a node in the linked list.
 5. `Sort`: Sort the nodes of the linked list.
 
 #### Types of Linked List
-1. `Singly Linked List`: 
-   - Each node has data and a pointer to the next node.
-![Linked List](./assets/../../assets/singly-linked-list.webp)
-1. `Doubly Linked List`: 
-   - We add a pointer to the previous node in a doubly-linked list, thus, we can go in either direction: forward or backward.
-![Linked List](./assets/../../assets/doubly-linked-list.webp)
-1. `Circular Linked List`: 
-   - A circular linked list is a variation of a linked list in which the last element is linked to the first element. 
-   - This forms a circular loop.
-   - A circular linked list can be either singly linked or doubly linked.
-![Linked List](./assets/../../assets/circular-linked-list.webp)  
 
-| Operation | Approximation |
-| :--- | :---: |
-| Lookup - **by index** | $O(n)$ |
-| Lookup - **by value** | $O(n)$ |
-| Insert - **at the beginning** | $O(1)$ |
-| Insert - **at the end** | $O(1)$ |
-| Insert - **in the middle** | $O(n)$ |
-| Delete - **from the beginning**| $O(1)$ |
-| Delete - **from the end** | $O(n)$ |
-| Delete - **from the middle** | $O(n)$ |
-| Space Complexity | $O(n)$ |
+1. `Singly Linked List`:
+    - Each node has data and a pointer to the next node.
+      ![Linked List](./assets/../../assets/singly-linked-list.webp)
+1. `Doubly Linked List`:
+    - We add a pointer to the previous node in a doubly-linked list, thus, we can go in either direction: forward or backward.
+      ![Linked List](./assets/../../assets/doubly-linked-list.webp)
+1. `Circular Linked List`:
+    - A circular linked list is a variation of a linked list in which the last element is linked to the first element.
+    - This forms a circular loop.
+    - A circular linked list can be either singly linked or doubly linked.
+      ![Linked List](./assets/../../assets/circular-linked-list.webp)
+
+| Operation                       | Approximation |
+| :------------------------------ | :-----------: |
+| Lookup - **by index**           |    $O(n)$     |
+| Lookup - **by value**           |    $O(n)$     |
+| Insert - **at the beginning**   |    $O(1)$     |
+| Insert - **at the end**         |    $O(1)$     |
+| Insert - **in the middle**      |    $O(n)$     |
+| Delete - **from the beginning** |    $O(1)$     |
+| Delete - **from the end**       |    $O(n)$     |
+| Delete - **from the middle**    |    $O(n)$     |
+| Space Complexity                |    $O(n)$     |
 
 ---
-#### Q: Create a Linked List is composed of the following methods:
-- [x] [addFirst](#a-addfirst)
-- [x] [addLast](#a-addlast)
-- [x] [indexOf](#a-indexof)
-- [x] [contains](#a-contains)
-- [x] [removeFirst](#a-removefirst)
-- [x] [removeLast](#a-removelast)
-- [x] [isEmpty](#a-isempty)
-- [x] [toArray](#a-toarray)
-- [x] [reverse ✸](#a-reverse)
-- [x] [getKthFromTheEnd ✸](#a-getkthfromtheend)
-- [x] [printMiddle ✸](#a-printmiddle)
-- [x] [hasLoop ✸](#a-hasloop)
+
+#### Q: Create a `Linked List` is composed of the following methods:
+
+-   [x] [addFirst](#a-addfirst)
+-   [x] [addLast](#a-addlast)
+-   [x] [indexOf](#a-indexof)
+-   [x] [contains](#a-contains)
+-   [x] [removeFirst](#a-removefirst)
+-   [x] [removeLast](#a-removelast)
+-   [x] [isEmpty](#a-isempty)
+-   [x] [toArray](#a-toarray)
+-   [x] [reverse ✸](#a-reverse)
+-   [x] [getKthFromTheEnd ✸](#a-getkthfromtheend)
+-   [x] [printMiddle ✸](#a-printmiddle)
+-   [x] [hasLoop ✸](#a-hasloop)
 
 #### A: Structure of a linked list
+
 ```Java
 public class LinkedList {
     private class Node {
@@ -80,8 +86,11 @@ public class LinkedList {
     private int size;
 }
 ```
+
 ---
+
 #### A: addFirst
+
 ```Java
 public void addFirst(int item) {
     var node = new Node(item);
@@ -96,8 +105,11 @@ public void addFirst(int item) {
     size++;
 }
 ```
+
 ---
+
 #### A: addLast
+
 ```Java
 public void addLast(int item) {
     var node = new Node(item);
@@ -112,14 +124,17 @@ public void addLast(int item) {
     size++;
 }
 ```
+
 ---
+
 #### A: indexOf
+
 ```Java
 public int indexOf(int item) {
     int index = 0;
     var current = first;
     while (current != null) {
-        if (current.value == item) 
+        if (current.value == item)
             return index;
 
         current = current.next;
@@ -129,15 +144,21 @@ public int indexOf(int item) {
     return -1;
 }
 ```
+
 ---
+
 #### A: contains
+
 ```Java
 public boolean contains(int item) {
     return indexOf(item) != -1;
 }
 ```
+
 ---
+
 #### A: removeFirst
+
 ```Java
 public void removeFirst() {
     if (isEmpty())
@@ -154,13 +175,16 @@ public void removeFirst() {
     size--;
 }
 ```
+
 ---
+
 #### A: removeLast
+
 ```Java
 private Node previous(Node node) {
     var current = first;
     while (current != null) {
-        if (current.next == node) 
+        if (current.next == node)
             return current;
 
         current = current.next;
@@ -184,15 +208,21 @@ public void removeLast() {
     size--;
 }
 ```
+
 ---
+
 ####
+
 ```Java
 public boolean isEmpty() {
     return first == null;
 }
 ```
+
 ---
+
 #### A: toArray
+
 ```Java
 public int[] toArray() {
     int[] array = new int[size];
@@ -209,6 +239,7 @@ public int[] toArray() {
 ```
 
 #### A: reverse
+
 ```Java
 public void reverse() {
     if (isEmpty()) return;
@@ -227,8 +258,11 @@ public void reverse() {
     first = previous;
 }
 ```
+
 ---
+
 #### A: getKthFromTheEnd
+
 ```Java
 public int getKthFromTheEnd(int k) {
     if (k < 1 || k > size)
@@ -250,8 +284,11 @@ public int getKthFromTheEnd(int k) {
     return a.value;
 }
 ```
+
 ---
+
 #### A: printMiddle
+
 ```Java
 public void printMiddle() {
     if (isEmpty())
@@ -268,8 +305,11 @@ public void printMiddle() {
     else System.out.println(a.value + ", " + a.next.value);
 }
 ```
+
 ---
+
 #### A: hasLoop
+
 ```Java
 public boolean hasLoop() {
     var slow = first;
@@ -277,7 +317,7 @@ public boolean hasLoop() {
     while (fast != null && fast.next != null) {
         slow = slow.next;
         fast = fast.next.next;
-        if (slow == fast) 
+        if (slow == fast)
             return true;
     }
 

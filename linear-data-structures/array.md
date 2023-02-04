@@ -1,26 +1,29 @@
 #### Array
-- A **list of items** store **sequentially**.
 
-| Operation | Approximation |
-| :--- | :---: |
-| Lookup - **by index** | $O(1)$ |
-| Lookup - **by value** | $O(n)$ |
-| Insert | $O(n)$ |
-| Delete | $O(n)$ |
+-   A **list of items** store **sequentially**.
+
+| Operation             | Approximation |
+| :-------------------- | :-----------: |
+| Lookup - **by index** |    $O(1)$     |
+| Lookup - **by value** |    $O(n)$     |
+| Insert                |    $O(n)$     |
+| Delete                |    $O(n)$     |
 
 ---
-#### Q: Create an Array is composed of the following methods:
-- [x] [insert](#a-insert)
-- [x] [insertAt](#a-insertat)
-- [x] [removeAt](#a-removeat)
-- [x] [indexOf](#a-indexof)
-- [x] [contains](#a-contains)
-- [x] [reverse](#a-reverse)
-- [x] [max](#a-max)
-- [x] [intersect](#a-intersect)
 
+#### Q: Create an `Array` is composed of the following methods:
+
+-   [x] [insert](#a-insert)
+-   [x] [insertAt](#a-insertat)
+-   [x] [removeAt](#a-removeat)
+-   [x] [indexOf](#a-indexof)
+-   [x] [contains](#a-contains)
+-   [x] [reverse](#a-reverse)
+-   [x] [max](#a-max)
+-   [x] [intersect](#a-intersect)
 
 #### A: Structure of an array
+
 ```Java
 public class Array {
     private int[] items;
@@ -45,8 +48,11 @@ public class Array {
     }
 }
 ```
+
 ---
+
 #### A: insert
+
 ```Java
 private boolean isFull() {
     return items.length == count;
@@ -67,8 +73,11 @@ public void insert(int item) {
     items[count++] = item;
 }
 ```
+
 ---
+
 #### A: insertAt
+
 ```Java
 public void insertAt(int item, int index) {
     if (index < 0 || index > count)
@@ -83,8 +92,11 @@ public void insertAt(int item, int index) {
     count++;
 }
 ```
+
 ---
+
 #### A: removeAt
+
 ```Java
 public void removeAt(int index) {
     if (index < 0 || index >= count)
@@ -96,8 +108,11 @@ public void removeAt(int index) {
     count--;
 }
 ```
+
 ---
+
 #### A: indexOf
+
 ```Java
 public int indexOf(int item) {
     for (int i = 0; i < count; i++) {
@@ -108,15 +123,21 @@ public int indexOf(int item) {
     return -1;
 }
 ```
+
 ---
+
 #### A: contains
+
 ```Java
 public boolean contains(int item) {
     return indexOf(item) != -1;
 }
 ```
+
 ---
+
 #### A: reverse
+
 ```Java
 public void reverse() {
     int[] newItems = new int[count];
@@ -126,8 +147,11 @@ public void reverse() {
     items = newItems;
 }
 ```
+
 ---
+
 #### A: max
+
 ```Java
 public int max() {
     int max = 0;
@@ -139,8 +163,11 @@ public int max() {
     return max;
 }
 ```
+
 ---
+
 #### A: intersect
+
 ```Java
 public Array intersect(Array other) {
     var intersection = new Array(count);
