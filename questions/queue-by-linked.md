@@ -1,4 +1,4 @@
-#### Q: Create a queue is composed of§ the following methods:
+#### Q: Create a queue is composed of the following methods:
 - [x] [enqueue](#a-enqueue)
 - [x] [dequeue](#a-dequeue)
 - [x] [peek](#a-peek)
