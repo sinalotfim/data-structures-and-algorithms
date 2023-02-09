@@ -27,6 +27,7 @@ A **computer program** is **a collection of instructions** to **perform a specif
 
 -   [Tree](./non-linear-data-structures/tree.md)
 -   [Binary Tree](./non-linear-data-structures/binary-tree.md)
+-   [Binary Search Tree](./non-linear-data-structures/binary-search-tree.md)
 -   [AVL Tree](./non-linear-data-structures/avl-tree.md)
 -   [Heap](./non-linear-data-structures/heap.md)
 -   [Trie](./non-linear-data-structures/trie.md)
