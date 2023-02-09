@@ -1,7 +1,7 @@
 #### Binary Tree
 
--   It is a **Tree** that every node has **maximum two children**.
--   A binary tree is a tree data structure in which each parent node can have at most two children.
+-   A Binary Tree is a Tree that every node has **maximum two children**.
+-   A Binary Tree is a Tree in which each parent node can have **at most two children**.
 -   Each node of a binary tree consists of three items:
     1.  data item
     2.  address of left child
@@ -9,90 +9,131 @@
         ![Binary tree](../assets/binary_tree.webp)
         ![Binary tree](../assets/binary-tree-representation.webp)
 -   Types
-    -   Binary Search Tree
-        -   AVL Tree
+
     -   Full Binary Tree
     -   Perfect Binary Tree
     -   Complete Binary Tree
         -   Heap
+    -   Balanced Binary Tree
+    -   Binary Search Tree
+        -   AVL Tree
     -   Degenerate or Pathological Tree
     -   Skewed Binary Tree
         1.  Right Skewed Binary Tree
         2.  Left Skewed Binary Tree
-    -   Balanced Binary Tree
--   Applications
-    -   For easy and quick access to data
-    -   In router algorithms
-    -   To implement heap data structure
-    -   Syntax tree
+
+    ```mermaid
+        graph TD;
+            Binary-Tree-->Full-Binary-Tree;
+            Binary-Tree-->Perfect-Binary-Tree;
+            Binary-Tree-->Complete-Binary-Tree-->Heap;
+            Binary-Tree-->Balanced-Binary-Tree;
+            Binary-Tree-->Binary-Search-Tree-->AVL-Tree;
+            Binary-Tree-->Degenerate-Tree;
+            Binary-Tree-->Skewed-Binary-Tree;
+            Skewed-Binary-Tree-->Left-Skewed-Binary-Tree;
+            Skewed-Binary-Tree-->Right-Skewed-Binary-Tree;
+    ```
+
+#### Applications
+
+1.  For easy and quick access to data
+2.  In **router algorithms**
+3.  To **implement heap** data structure
+4.  Syntax tree
 
 #### Full Binary Tree
 
--   Every level except the **last level** is full of nodes.
--   A full Binary tree is a special type of binary tree in which every parent node/internal node has either two or no children.
+-   A Full Binary Tree is a special type of Binary Tree in which every `parent node`/`internal node` has either two or no children, every level except the **last level** is full of nodes.
 -   Theorems
 
-    1.  The number of leaves is <mark>$i + 1$</mark>.
-    2.  The total number of nodes is <mark>$2i + 1$</mark>.
-    3.  The number of internal nodes is <mark>$(n – 1) / 2$</mark>.
-    4.  The number of leaves is <mark>$(n + 1) / 2$</mark>.
-    5.  The total number of nodes is <mark>$2l – 1$</mark>.
-    6.  The number of internal nodes is <mark>$l – 1$</mark>.
-    7.  The number of leaves is at most <mark>$2λ - 1$</mark>.
+    1.  `i` = the number of **internal nodes**
+    2.  `n` = the total number of **nodes**
+    3.  `l` = the number of **leaves**
+    4.  `λ` = the number of **levels**
+    5.  The number of leaves is <mark>$i + 1$</mark>.
+    6.  The total number of nodes is <mark>$2i + 1$</mark>.
+    7.  The number of internal nodes is <mark>$(n – 1) / 2$</mark>.
+    8.  The number of leaves is <mark>$(n + 1) / 2$</mark>.
+    9.  The total number of nodes is <mark>$2l – 1$</mark>.
+    10. The number of internal nodes is <mark>$l – 1$</mark>.
+    11. The number of leaves is at most <mark>$2\lambda - 1$</mark>.
         ![Full binary tree](../assets/full-binary-tree.webp)
 
 #### Perfect Binary Tree
 
--   A perfect binary tree is a type of binary tree in which every internal node has exactly two child nodes and all the leaf nodes are at the same level.
--   Recursively, a perfect binary tree can be defined as:
-    1. If a single node has no children, it is a perfect binary tree of height h = 0,
-    2. If a node has h > 0, it is a perfect binary tree if both of its subtrees are of height h - 1 and are non-overlapping.
+-   A Perfect Binary Tree is a type of Binary Tree in which **every internal node** has exactly **two child nodes** and all the leaf nodes are **at the same level**.
+-   Recursively, a Perfect Binary Tree can be defined as:
+    1. If a single node has no children, it is a Perfect Binary Tree of height `h = 0`.
+    2. If a node has `h > 0`, it is a Perfect Binary Tree if both of its subtrees are of height `h - 1` and are non-overlapping.
 -   Theorems
-    1. A perfect binary tree of height h has <mark>$2^{h + 1} – 1$</mark> node.
-    2. A perfect binary tree with n nodes has height <mark>$log(n + 1) – 1 = Θ(ln(n))$</mark>.
-    3. A perfect binary tree of height h has <mark>$2^h$</mark> leaf nodes.
-    4. The average depth of a node in a perfect binary tree is $Θ(ln(n))$.
+    1. A Perfect Binary Tree of height h has <mark>$2^{h + 1} – 1$</mark> node.
+    2. A Perfect Binary Tree with n nodes has height <mark>$\log(n + 1) – 1 = \theta(\ln(n))$</mark>.
+    3. A Perfect Binary Tree of height h has <mark>$2^h$</mark> leaf nodes.
+    4. The average depth of a node in a Perfect Binary Tree is $Θ(ln(n))$.
        ![Perfect binary tree](../assets/perfect-binary-tree-rec.webp)
        ![Perfect binary tree](../assets/perfect-binary-tree.webp)
 
 #### Complete Binary Tree
 
--   Eevery level except the **last level** is **completely filled** and the levels **are filled from the left to the right**.
--   A complete binary tree is just like a full binary tree, but with two major differences
+-   A Complete Binary Tree is just like a Full Binary Tree, but with two major differences
     1.  Every level must be completely filled.
     2.  All the leaf elements must lean towards the left.
-    3.  The last leaf element might not have a right sibling i.e. a complete binary tree doesn't have to be a full binary tree.
+    3.  The last leaf element might not have a right sibling i.e. a Complete Binary Tree doesn't have to be a Full Binary Tree.
+-   Every level except the **last level** is **completely filled** and the levels **are filled from the left to the right**.
+-   Relationship between array indexes in Complete Binary Tree:
+    1.  Parent <mark>$i$</mark>
+    2.  Left child <mark>$2i + 1$</mark>
+    3.  Right child <mark>$2i + 2$</mark>
+-   Applications
+    -   Heap-based data structures
+    -   Heap sort
         ![Complete binary tree](../assets/complete-binary-tree.webp)
+
+#### Balanced Binary Tree
+
+-   It is a type of Binary Tree in which the difference between **the height of the left and the right subtree** for each node is **either 0 or 1**.
+-   A Balanced Binary Tree, also referred to as a **Height-Balanced Binary Tree**, is defined as a binary tree in which the height of the left and right subtree of any node differ by **not more than one**.
+    ```Java
+        height(left) - height(right) <= 1
+    ```
+-   Following are the conditions for a Height-Balanced Binary Tree:
+
+    1. Difference between the left and the right subtree for any node is not more than one.
+    2. The left subtree is balanced.
+    3. The right subtree is balanced.
+
+-   Balanced Binary Tree Applications
+
+    -   Balanced Binary Search Tree
+    -   AVL Tree
+
+    ![Balanced binary tree](../assets/balanced-binary-tree.webp)
+
+#### Binary Search Tree
+
+-   Binary Search Tree is a data structure that quickly allows us to maintain a sorted list of numbers.
+
+    1. It is called a **Binary Tree** because each tree node **has a maximum of two children**.
+    2. It is called a **Search Tree** because it **can be used to search** for the presence of a number in <mark>$O(\log(n))$</mark> time.
+
+-   **Left** Node **<** **Root** Node **<** **Right** Node.
 
 #### Degenerate or Pathological Tree
 
--   A degenerate or pathological tree is the tree having a single child either left or right.
+-   A Degenerate or Pathological Tree is the tree having a single child either left or right.
     ![Degenerate binary tree](../assets/degenerate-binary-tree.webp)
 
 #### Skewed Binary Tree
 
--   A skewed binary tree is a pathological/degenerate tree in which the tree is either dominated by the left nodes or the right nodes.
+-   A Skewed Binary Tree is a Degenerate/Pathological Tree in which the tree is either dominated by the left nodes or the right nodes.
     ![Skewed binary tree](../assets/skewed-binary-tree.webp)
-
-#### Skewed Binary Tree
-
--   It is a type of binary tree in which the difference between the height of the left and the right subtree for each node is either 0 or 1.
-    ```Java
-        height(left) - height(right) <= 1
-    ```
-    ![Balanced binary tree](../assets/balanced-binary-tree.webp)
 
 | Operation | Approximation |
 | :-------- | :-----------: |
 | Lookup    |  $O(\log n)$  |
 | Insert    |  $O(\log n)$  |
 | Delete    |  $O(\log n)$  |
-
----
-
-##### Binary Search Tree
-
--   **Left** Node **<** **Root** Node **<** **Right** Node.
 
 ---
 
