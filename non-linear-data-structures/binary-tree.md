@@ -67,7 +67,7 @@
     1. If a single node has no children, it is a Perfect Binary Tree of height `h = 0`.
     2. If a node has `h > 0`, it is a Perfect Binary Tree if both of its subtrees are of height `h - 1` and are non-overlapping.
 -   Theorems
-    1. A Perfect Binary Tree of height h has <mark>$2^{h + 1} – 1$</mark> node.
+    1. A Perfect Binary Tree of height `h` has <mark>$2^{(h + 1)} – 1$</mark> node.
     2. A Perfect Binary Tree with n nodes has height <mark>$\log(n + 1) – 1 = \theta(\ln(n))$</mark>.
     3. A Perfect Binary Tree of height h has <mark>$2^h$</mark> leaf nodes.
     4. The average depth of a node in a Perfect Binary Tree is $Θ(ln(n))$.
@@ -140,7 +140,7 @@
 #### Q: Create a Binary Tree is composed of the following methods:
 
 -   [x] [insert](#a-insert)
--   [x] [find](#a-find)
+-   [x] [contains](#a-contains)
 -   [x] [pre-order](#a-pre-order)
 -   [x] [in-order](#a-in-order-asc) - ASC
 -   [x] [in-order](#a-in-order-desc) - DESC
@@ -158,7 +158,7 @@
 -   [x] [isBalanced ✸](#a-isbalanced)
 -   [x] [isPerfect ✸](#a-isperfect)
 -   [x] [areSibling ✸](#a-aresibling)
--   [x] [getAncestors ✸](#a-getancestors)
+-   [x] [getAncestors ✸✸](#a-getancestors)
 
 ---
 
@@ -190,6 +190,7 @@ public class BinaryTree {
 #### A: insert
 
 ```Java
+// BST insert
 public void insert(int value) {
     var node = new Node(value);
 
@@ -219,21 +220,21 @@ public void insert(int value) {
 
 ---
 
-#### A: find
+#### A: contains
 
 ```Java
-public boolean find(int value) {
-    var current = root;
-    while (current != null) {
-        if (value < current.value)
-            current = current.leftChild;
-        else if (value > current.value)
-            current = current.rightChild;
-        else
-            return true;
-    }
+public boolean contains(int value) {
+    return contains(root, value);
+}
 
-    return false;
+private boolean contains(Node root, int value) {
+    if (root == null)
+        return false;
+
+    if (root.value == value)
+        return true;
+
+    return contains(root.leftChild, value) || contains(root.rightChild, value);
 }
 ```
 
@@ -341,37 +342,24 @@ private int height(Node root) {
 #### A: min
 
 ```Java
-// O(n) -> BT(Binary Tree)
-// public int min() {
-//     if (root == null)
-//         throw new IllegalStateException();
-
-//     return min(root);
-// }
-
-// private int min(Node root) {
-//     if (isLeaf(root))
-//         return root.value;
-
-//     var left = min(root.leftChild);
-//     var right = min(root.rightChild);
-
-//     return Math.min(Math.min(left, right), root.value);
-// }
-
-// O(log n) -> BST(Binary Search Tree)
+// O(n) -> BT
 public int min() {
     if (root == null)
         throw new IllegalStateException();
 
-    var current = root;
-    var last = current;
-    while (current != null) {
-        last = current;
-        current = current.leftChild;
-    }
+    return min(root);
+}
 
-    return last.value;
+public int min(Node root) {
+    if (isLeaf(root))
+        return root.value;
+
+    int left = root.value;
+    int right = root.value;
+    if (root.leftChild != null) left = min(root.leftChild);
+    if (root.rightChild != null) right = min(root.rightChild);
+
+    return Math.min(Math.min(left, right), root.value);
 }
 ```
 
@@ -387,11 +375,16 @@ public int max() {
     return max(root);
 }
 
-private int max(Node root) {
-    if (root.rightChild == null)
+public int max(Node root) {
+    if (isLeaf(root))
         return root.value;
 
-    return max(root.rightChild);
+    int left = root.value;
+    int right = root.value;
+    if (root.leftChild != null) left = max(root.leftChild);
+    if (root.rightChild != null) right = max(root.rightChild);
+
+    return Math.max(Math.max(left, right), root.value);
 }
 ```
 
@@ -400,24 +393,25 @@ private int max(Node root) {
 #### A: equals
 
 ```Java
-// public boolean equals(BinaryTree other) {
-//     if (other == null)
-//         return false;
+public boolean equals(BinaryTree other) {
+    if (other == null)
+        return false;
 
-//     return equals(root, other.root);
-// }
+    return equals(root, other.root);
+}
 
-// private boolean equals(Node first, Node second) {
-//     if (first == null && second == null)
-//         return true;
+private boolean equals(Node first, Node second) {
+    if (first == null && second == null)
+        return true;
 
-//     if (first != null && second != null)
-//         return first.value == second.value
-//             && equals(first.leftChild, second.leftChild)
-//             && equals(first.rightChild, second.rightChild);
+    if (first != null && second != null)
+        return
+            first.value == second.value &&
+            equals(first.leftChild, second.leftChild) &&
+            equals(first.rightChild, second.rightChild);
 
-//     return false;
-// }
+    return false;
+}
 ```
 
 ---
@@ -515,26 +509,6 @@ private int countLeaves(Node root) {
         return 1;
 
     return countLeaves(root.leftChild) + countLeaves(root.rightChild);
-}
-```
-
----
-
-#### A: contains
-
-```Java
-public boolean contains(int value) {
-    return contains(root, value);
-}
-
-private boolean contains(Node root, int value) {
-    if (root == null)
-        return false;
-
-    if (root.value == value)
-        return true;
-
-    return contains(root.leftChild, value) || contains(root.rightChild, value);
 }
 ```
 
