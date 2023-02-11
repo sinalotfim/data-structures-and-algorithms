@@ -139,6 +139,7 @@
 
 #### Q: Create a Binary Tree is composed of the following methods:
 
+-   [x] [structure](#a-structure-of-a-binary-tree)
 -   [x] [insert](#a-insert)
 -   [x] [contains](#a-contains)
 -   [x] [pre-order](#a-pre-order)

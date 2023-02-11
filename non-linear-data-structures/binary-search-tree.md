@@ -36,7 +36,7 @@
 
 #### Q: Create a Binary Search Tree is composed of the following methods:
 
--   [x] [structure](#a-structure-of-a-binary-tree)
+-   [x] [structure](#a-structure-of-a-binary-search-tree)
 -   [x] [insert](#a-insert)
 -   [x] [contains](#a-contains)
 -   [x] [min ✸](#a-min)
@@ -62,7 +62,7 @@
 
 ---
 
-#### A: Structure of a Binary Tree
+#### A: Structure of a Binary Search Tree
 
 ```Java
 public class BinarySearchTree {
