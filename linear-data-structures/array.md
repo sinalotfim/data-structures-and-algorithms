@@ -13,6 +13,7 @@
 
 #### Q: Create an `Array` is composed of the following methods:
 
+-   [x] [structure](#a-structure-of-an-array)
 -   [x] [insert](#a-insert)
 -   [x] [insertAt](#a-insertat)
 -   [x] [removeAt](#a-removeat)
