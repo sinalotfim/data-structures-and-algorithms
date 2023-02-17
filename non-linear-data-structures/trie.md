@@ -1,32 +1,36 @@
 #### Trie
-- It is **another kind of Trees**, but they are not Binary Trees that each child can have serveral nodes, and the name actually comes from re**Trie**val.
-- Another names for Tries are:
-    - Digital
-    - Radix
-    - Prefix Tree
-- The important place that you can use Tries is **Autocompletion**.
-- Why Don't we use Arrays instead of Tries?
-    - It wastes a lot of space because a lot of words have the same prefix.
-    - Looking up a word in an array is relatively slow.
 
-| Operation | Approximation | |
-| :--- | :---: | :---: |
-| Lookup | $O(L)$ | L = length of word |
-| Insert | $O(L)$ | L = length of word |
-| Delete | $O(L)$ | L = length of word |
+-   Trie is **another kind of Trees**, but they are not Binary Trees that each child can have serveral nodes, and the name actually comes from re**Trie**val.
+-   Another names for Tries are:
+    -   Digital
+    -   Radix
+    -   Prefix Tree
+-   The important place that you can use Tries is **Autocompletion**.
+-   Why Don't we use Arrays instead of Tries?
+    -   Array **wastes a lot of space** because a lot of words have the same prefix.
+    -   **Looking up a word** in an array is **relatively slow**.
+
+| Operation | Approximation |                    |
+| :-------- | :-----------: | :----------------: |
+| Lookup    |    $O(L)$     | L = length of word |
+| Insert    |    $O(L)$     | L = length of word |
+| Delete    |    $O(L)$     | L = length of word |
 
 ---
+
 #### Q: Create a Trie is composed of the following methods:
-- [x] [insert](#a-insert)
-- [x] [remove](#a-remove)
-- [x] [contains](#a-contains)
-- [x] [traverse](#a-traverse)
-- [x] [findWords](#a-findwords)
-- [x] [countWords](#a-countwords)
-- [x] [printWords](#a-printwords)
-- [x] [longestCommonPrefix](#a-longestcommonprefix)
+
+-   [x] [insert](#a-insert)
+-   [x] [remove](#a-remove)
+-   [x] [contains](#a-contains)
+-   [x] [traverse](#a-traverse)
+-   [x] [findWords](#a-findwords)
+-   [x] [countWords](#a-countwords)
+-   [x] [printWords](#a-printwords)
+-   [x] [longestCommonPrefix](#a-longestcommonprefix)
 
 #### A: Structure of a Trie
+
 ```Java
 public class Trie {
     public static int ALPHABET_SIZE = 26;
@@ -73,22 +77,29 @@ public class Trie {
     private Node root = new Node(' ');
 }
 ```
+
 ---
+
 #### A: insert
+
 ```Java
 public void insert(String word) {
     var current = root;
     for (var ch : word.toCharArray()) {
         if (!current.hasChild(ch))
             current.addChild(ch);
+
         current = current.getChild(ch);
     }
 
     current.isEndOfWord = true;
 }
 ```
+
 ---
+
 #### A: remove
+
 ```Java
 public void remove(String word) {
     if (word == null)
@@ -114,8 +125,11 @@ private void remove(Node root, String word, int index) {
         root.removeChild(ch);
 }
 ```
+
 ---
+
 #### A: contains
+
 ```Java
 // Iterative contains
 public boolean contains(String word) {
@@ -126,6 +140,7 @@ public boolean contains(String word) {
     for (var ch : word.toCharArray()) {
         if (!current.hasChild(ch))
             return false;
+            
         current = current.getChild(ch);
     }
 
@@ -155,8 +170,11 @@ private boolean contains(Node root, String word, int index) {
     return contains(child, word, index + 1);
 }
 ```
+
 ---
+
 #### A: traverse
+
 ```Java
 public void traverse() {
     traverse(root);
@@ -178,8 +196,11 @@ private void traverse(Node root) {
         traverse(child);
 }
 ```
+
 ---
+
 #### A: findWords
+
 ```Java
 private Node findLastNodeOf(String prefix) {
     if (prefix == null)
@@ -190,10 +211,10 @@ private Node findLastNodeOf(String prefix) {
         var child = current.getChild(ch);
         if (child == null)
             return null;
-        
+
         current = child;
     }
-    
+
     return current;
 }
 
@@ -216,8 +237,11 @@ private void findWords(Node root, String prefix, List<String> words) {
       findWords(child, prefix + child.value, words);
 }
 ```
+
 ---
+
 #### A: countWords
+
 ```Java
 public int countWords() {
     return countWords(root);
@@ -235,8 +259,11 @@ private int countWords(Node root) {
     return total;
 }
 ```
+
 ---
+
 #### A: printWords
+
 ```Java
 public void printWords() {
     printWords(root, "");
@@ -250,8 +277,11 @@ private void printWords(Node root, String word) {
         printWords(child, word + child.value);
 }
 ```
+
 ---
+
 #### A: longestCommonPrefix
+
 ```Java
 public static String longestCommonPrefix(String[] words) {
     if (words == null)
@@ -268,7 +298,7 @@ public static String longestCommonPrefix(String[] words) {
         var children = current.getChildren();
         if (children.length != 1)
             break;
-      
+
         current = children[0];
         prefix.append(current.value);
     }
