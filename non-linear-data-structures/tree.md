@@ -2,7 +2,7 @@
 
 -   Tree is a Data Structure that **stores elements in a hierachy**.
 -   Tree refers its elements as **Node** and **Line** that connects them as **Edges**.
--   A tree is **a nonlinear hierarchical data structure** that consists of nodes connected by edges.
+-   Tree is a **non-linear hierarchical data structure** that consists of nodes connected by edges.
     ![Tree](../assets/tree.webp)
 
 #### Applications
@@ -37,11 +37,11 @@
     - You can create a forest by cutting the root of a tree.
       ![Tree forest](../assets/forest.webp)
 5. `Height of a Node`
-    - The height of a node is the number of edges from the node to the deepest leaf (ie. the longest path from the node to a leaf node).
+    - The height of a node is the number of edges **from the node to the deepest leaf** (ie. the longest path from the node to a leaf node).
 6. `Degree of a Node`
     - The degree of a node is the total number of branches of that node.
 7. `Depth of a Node`
-    - The depth of a node is the number of edges from the root to the node.
+    - The depth of a node is the number of edges **from the root to the node**.
     - From **Bottom to Top** (**BT**)
 8. `Height of a Tree`
     - The height of a Tree is the height of the root node or the depth of the deepest node.
@@ -96,6 +96,6 @@
         display(root->data)
     ```
 -   In traversing, putting everything on a **stack** was helpful because now that the left-subtree of the root node has been traversed, we can print it and go to the right subtree.
-    ![Tree inorder traversal 1](../assets/tree_traversal_inorder-1.webp)
-    ![Tree inorder traversal 2](../assets/tree_traversal_inorder-2.webp)
-    ![Tree inorder traversal 3](../assets/tree_traversal_inorder-3.webp)
+    | Tree | Step 1 | Step 2 |
+    | :-------------: | :-------------------: | :------------: |
+    | ![Tree inorder traversal 1](../assets/tree_traversal_inorder-1.webp) | ![Tree inorder traversal 2](../assets/tree_traversal_inorder-2.webp)| ![Tree inorder traversal 3](../assets/tree_traversal_inorder-3.webp) |

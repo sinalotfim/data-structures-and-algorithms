@@ -1,8 +1,8 @@
 #### Binary Tree
 
--   A Binary Tree is a Tree that every node has **maximum two children**.
--   A Binary Tree is a Tree in which each parent node can have **at most two children**.
--   Each node of a binary tree consists of three items:
+-   Binary Tree is a Tree that every node has **maximum two children**.
+-   Binary Tree is a Tree in which each parent node can have **at most two children**.
+-   Each node of a Binary Tree consists of **three items**:
     1.  data item
     2.  address of left child
     3.  address of right child
@@ -10,8 +10,8 @@
         ![Binary tree](../assets/binary-tree-representation.webp)
 -   Types
 
-    -   Full Binary Tree
     -   Perfect Binary Tree
+    -   Full Binary Tree
     -   Complete Binary Tree
         -   Heap
     -   Balanced Binary Tree
@@ -24,8 +24,8 @@
 
     ```mermaid
         graph TD;
-            Binary-Tree-->Full-Binary-Tree;
             Binary-Tree-->Perfect-Binary-Tree;
+            Binary-Tree-->Full-Binary-Tree;
             Binary-Tree-->Complete-Binary-Tree-->Heap;
             Binary-Tree-->Balanced-Binary-Tree;
             Binary-Tree-->Binary-Search-Tree-->AVL-Tree;
@@ -42,24 +42,6 @@
 3.  To **implement heap** data structure
 4.  Syntax tree
 
-#### Full Binary Tree
-
--   A Full Binary Tree is a special type of Binary Tree in which every `parent node`/`internal node` has either two or no children, every level except the **last level** is full of nodes.
--   Theorems
-
-    1.  `i` = the number of **internal nodes**
-    2.  `n` = the total number of **nodes**
-    3.  `l` = the number of **leaves**
-    4.  `λ` = the number of **levels**
-    5.  The number of leaves is <mark>$i + 1$</mark>.
-    6.  The total number of nodes is <mark>$2i + 1$</mark>.
-    7.  The number of internal nodes is <mark>$(n – 1) / 2$</mark>.
-    8.  The number of leaves is <mark>$(n + 1) / 2$</mark>.
-    9.  The total number of nodes is <mark>$2l – 1$</mark>.
-    10. The number of internal nodes is <mark>$l – 1$</mark>.
-    11. The number of leaves is at most <mark>$2\lambda - 1$</mark>.
-        ![Full binary tree](../assets/full-binary-tree.webp)
-
 #### Perfect Binary Tree
 
 -   A Perfect Binary Tree is a type of Binary Tree in which **every internal node** has exactly **two child nodes** and all the leaf nodes are **at the same level**.
@@ -73,6 +55,25 @@
     4. The average depth of a node in a Perfect Binary Tree is $Θ(ln(n))$.
        ![Perfect binary tree](../assets/perfect-binary-tree-rec.webp)
        ![Perfect binary tree](../assets/perfect-binary-tree.webp)
+
+#### Full Binary Tree
+
+-   Full Binary Tree is a special type of Binary Tree in which every `parent node`/`internal node` has **either two or no children**, every level except the **last level** is full of nodes.
+-   Theorems
+
+    1.  `i` = the number of **internal nodes**
+    2.  `n` = the total number of **nodes**
+    3.  `l` = the number of **leaves**
+    4.  `λ` = the number of **levels**
+    5.  The number of leaves is <mark>$i + 1$</mark>.
+    6.  The total number of nodes is <mark>$2i + 1$</mark>.
+    7.  The number of internal nodes is <mark>$(n – 1) / 2$</mark>.
+    8.  The number of leaves is <mark>$(n + 1) / 2$</mark>.
+    9.  The total number of nodes is <mark>$2l – 1$</mark>.
+    10. The number of internal nodes is <mark>$l – 1$</mark>.
+    11. The number of leaves is at most <mark>$2\lambda - 1$</mark>.
+
+        ![Full binary tree](../assets/full-binary-tree.webp)
 
 #### Complete Binary Tree
 
