@@ -9,7 +9,7 @@ A **computer program** is **a collection of instructions** to **perform a specif
 -   Programming is all about data structures and algorithms. Data structures are used to hold data while algorithms are used to solve the problem using that data.
 -   Data structures and algorithms (DSA) goes through solutions to standard problems in detail and gives you an insight into how efficient it is to use each one of them. It also teaches you the science of evaluating the efficiency of an algorithm. This enables you to choose the best of various choices.
 
-> Note: <mark>Scalability is scale plus ability, which means the quality of an algorithm/system to handle the problem of larger size.</mark>
+> Note: Scalability is `scale` plus `ability`, which means the quality of an algorithm/system to handle the problem of larger size.
 
 -   [Data Structure](./data-structure.md)
 -   [Algorithm](./algorithm.md)

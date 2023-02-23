@@ -2,16 +2,16 @@
 
 -   It is **a storage** that is used to **store and organize data**.
 -   It is **a way of arranging data** on a computer so that it can be accessed and updated efficiently.
--   Data structure and **data types** are slightly different. Data structure is **the collection of data types** arranged in a specific order.
+-   **Data structures** and **Data Types** are slightly different. Data structure is **the collection of data types** arranged in a specific order.
 
 #### Types of Data Structure
 
 -   Linear data structure
     -   The elements are **arranged in sequence one after the other**.
-    -   Since elements are arranged in particular order, they are easy to implement.
+    -   Since elements are arranged in particular order, they are **easy to implement**.
 -   Non-linear data structure
-    -   The elements are not in any sequence.
-    -   Instead they are arranged in a hierarchical manner where one element will be connected to one or more elements.
+    -   The elements are **not in any sequence**.
+    -   Instead they are arranged in a **hierarchical manner** where one element will be connected to one or more elements.
 
 #### Linear data structures
 
@@ -45,9 +45,9 @@
 
 | Linear Data Structures                                                                                                                            | Non Linear Data Structures                                                                                                                     |
 | :------------------------------------------------------------------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------- |
-| The data items are arranged in sequential order, one after the other.                                                                             | The data items are arranged in non-sequential order (hierarchical manner).                                                                     |
-| All the items are present on the single layer.                                                                                                    | The data items are present at different layers.                                                                                                |
+| The data items are arranged in **sequential order**, one after the other.                                                                             | The data items are arranged in **non-sequential order** (hierarchical manner).                                                                     |
+| All the items are present on the **single layer**.                                                                                                    | The data items are present at **different layers**.                                                                                                |
 | It can be traversed on a single run. That is, if we start from the first element, we can traverse all the elements sequentially in a single pass. | It requires multiple runs. That is, if we start from the first element it might not be possible to traverse all the elements in a single pass. |
-| The memory utilization is not efficient.                                                                                                          | Different structures utilize memory in different efficient ways depending on the need.                                                         |
-| The time complexity increase with the data size.                                                                                                  | Time complexity remains the same.                                                                                                              |
+| The **memory utilization** is **not efficient**.                                                                                                          | Different structures **utilize memory in different efficient ways** depending on the need.                                                         |
+| The time complexity **increase** with the data size.                                                                                                  | Time complexity **remains** the same.                                                                                                              |
 | Arrays, Stack, Queue                                                                                                                              | Tree, Graph, Map                                                                                                                               |
