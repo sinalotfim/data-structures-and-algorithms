@@ -34,7 +34,8 @@ public int linearSearch(int[] array, int target) {
 | Space Complexity | $O(\log n)$ | $O(1)$ |
 
 ```Java
-public int binarySearchIter(int[] array, int target) {
+// Iterative Method
+public int binarySearch(int[] array, int target) {
     var left = 0;
     var right = array.length - 1;
 
@@ -53,11 +54,12 @@ public int binarySearchIter(int[] array, int target) {
     return -1;
 }
 
-public int binarySearchRec(int[] array, int target) {
-    return binarySearchRec(array, target, 0, array.length - 1);
+// Recursive Method
+public int binarySearch(int[] array, int target) {
+    return binarySearch(array, target, 0, array.length - 1);
 }
 
-private int binarySearchRec(int[] array, int target, int left, int right) {
+private int binarySearch(int[] array, int target, int left, int right) {
     if (left > right)
         return -1;
 
@@ -67,9 +69,9 @@ private int binarySearchRec(int[] array, int target, int left, int right) {
         return middle;
 
     if (target < array[middle])
-        return binarySearchRec(array, target, left, middle - 1);
+        return binarySearch(array, target, left, middle - 1);
 
-    return binarySearchRec(array, target, middle + 1, right);
+    return binarySearch(array, target, middle + 1, right);
 }
 ```
 ---
@@ -160,6 +162,6 @@ public int exponentialSearch(int[] array, int target) {
     int left = bound / 2;
     int right = Math.min(bound, array.length - 1);
 
-    return binarySearchRec(array, target, left, right);
+    return binarySearch(array, target, left, right);
 }
 ```
