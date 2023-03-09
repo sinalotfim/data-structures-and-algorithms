@@ -31,6 +31,8 @@ A **computer program** is **a collection of instructions** to **perform a specif
 -   [AVL Tree](./non-linear-data-structures/avl-tree.md)
 -   [Heap](./non-linear-data-structures/heap.md)
 -   [Trie](./non-linear-data-structures/trie.md)
+-   [Graph](./non-linear-data-structures/graph.md)
+-   [Weighted Graph](./non-linear-data-structures/weighted-graph.md)
 
 ### Algorithms
 
