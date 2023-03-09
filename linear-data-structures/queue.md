@@ -31,6 +31,7 @@ In programming terms, putting items in the queue is called <mark>enqueue</mark>,
 
 #### Q: Create a `Queue` is composed of the following methods:
 
+-   [x] [structure](#a-structure-of-a-queue)
 -   [x] [enqueue](#a-enqueue)
 -   [x] [dequeue](#a-dequeue)
 -   [x] [peek](#a-peek)
@@ -40,7 +41,7 @@ In programming terms, putting items in the queue is called <mark>enqueue</mark>,
 
 ---
 
-#### A: Structure of a stack
+#### A: Structure of a queue
 
 ```Java
 public class Queue {
