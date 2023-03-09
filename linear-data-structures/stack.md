@@ -32,6 +32,7 @@
 
 #### Q: Create a `Stack` is composed of the following methods:
 
+-   [x] [structue](#a-structure-of-a-stack)
 -   [x] [push](#a-push)
 -   [x] [pop](#a-pop)
 -   [x] [peek](#a-peek)
