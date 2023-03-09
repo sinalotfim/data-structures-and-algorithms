@@ -46,7 +46,7 @@
 
 ---
 
-#### A: Structure of a AVL Tree
+#### A: Structure of an AVL Tree
 
 ```Java
 public class AVLTree {
