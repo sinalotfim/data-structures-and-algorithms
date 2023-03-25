@@ -56,7 +56,7 @@ public class Array {
 
 ```Java
 private boolean isFull() {
-    return items.length == count;
+    return count == items.length;
 }
 
 private void resizeIfRequired() {
