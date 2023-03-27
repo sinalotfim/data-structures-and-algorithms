@@ -91,13 +91,14 @@
 
 #### Q: Create a `Hash Table` is composed of the following methods:
 
+-   [x] [structure](#a-structure-of-a-hash-table)
 -   [x] [put](#a-put)
 -   [x] [get](#a-get)
 -   [x] [remove](#a-remove)
 
 ---
 
-#### A: Structure of a hash table
+#### A: Structure of a `Hash Table`
 
 ```Java
 public class HashTable {
