@@ -55,6 +55,7 @@
 
 #### Q: Create a `Linked List` is composed of the following methods:
 
+-   [x] [structure](#a-structure-of-a-linked-list)
 -   [x] [addFirst](#a-addfirst)
 -   [x] [addLast](#a-addlast)
 -   [x] [indexOf](#a-indexof)
