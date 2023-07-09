@@ -212,7 +212,7 @@ public void removeLast() {
 
 ---
 
-####
+#### A: isEmpty
 
 ```Java
 public boolean isEmpty() {
