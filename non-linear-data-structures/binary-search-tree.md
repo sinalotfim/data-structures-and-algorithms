@@ -44,21 +44,21 @@
 
 ###### The rest methods are available and are the same with Binary Tree methods
 
--   [ ] [pre-order](#a-pre-order)
--   [ ] [in-order](#a-in-order-asc) - ASC
--   [ ] [in-order](#a-in-order-desc) - DESC
--   [ ] [post-order](#a-post-order)
--   [ ] [height ✸](#a-height)
--   [ ] [equals ✸](#a-equals)
--   [ ] [isBST ✸](#a-isbst)
--   [ ] [getNodesAtDistance ✸](#a-getnodesatdistance)
--   [ ] [level-order ✸](#a-level-order)
--   [ ] [size ✸](#a-size)
--   [ ] [countLeaves ✸](#a-countleaves)
--   [ ] [isBalanced ✸](#a-isbalanced)
--   [ ] [isPerfect ✸](#a-isperfect)
--   [ ] [areSibling ✸](#a-aresibling)
--   [ ] [getAncestors ✸](#a-getancestors)
+-   [ ] [pre-order](./binary-tree.md#a-pre-order)
+-   [ ] [in-order](./binary-tree.md#a-in-order-asc) - ASC
+-   [ ] [in-order](./binary-tree.md#a-in-order-desc) - DESC
+-   [ ] [post-order](./binary-tree.md#a-post-order)
+-   [ ] [height ✸](./binary-tree.md#a-height)
+-   [ ] [equals ✸](./binary-tree.md#a-equals)
+-   [ ] [isBST ✸](./binary-tree.md#a-isbst)
+-   [ ] [getNodesAtDistance ✸](./binary-tree.md#a-getnodesatdistance)
+-   [ ] [level-order ✸](./binary-tree.md#a-level-order)
+-   [ ] [size ✸](./binary-tree.md#a-size)
+-   [ ] [countLeaves ✸](./binary-tree.md#a-countleaves)
+-   [ ] [isBalanced ✸](./binary-tree.md#a-isbalanced)
+-   [ ] [isPerfect ✸](./binary-tree.md#a-isperfect)
+-   [ ] [areSibling ✸](./binary-tree.md#a-aresibling)
+-   [ ] [getAncestors ✸](./binary-tree.md#a-getancestors)
 
 ---
 

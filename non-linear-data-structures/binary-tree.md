@@ -156,7 +156,6 @@
 -   [x] [level-order ✸](#a-level-order)
 -   [x] [size ✸](#a-size)
 -   [x] [countLeaves ✸](#a-countleaves)
--   [x] [contains ✸](#a-contains)
 -   [x] [isBalanced ✸](#a-isbalanced)
 -   [x] [isPerfect ✸](#a-isperfect)
 -   [x] [areSibling ✸](#a-aresibling)

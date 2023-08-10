@@ -40,6 +40,7 @@
 
 #### Q: Create a Heap is composed of the following methods:
 
+-   [x] [structure](#a-structure-of-a-binary-tree)
 -   [x] [insert](#a-insert) - Insert for Max-Heap
 -   [x] [remove](#a-remove) - remove for Max-Heap
 -   [x] [peek](#a-peek) - Min in Min-Heap and Max in Max-Heap **without removing**

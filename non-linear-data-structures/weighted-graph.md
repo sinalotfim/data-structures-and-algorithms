@@ -37,12 +37,12 @@
 #### Q: Create a Weighted Graph is composed of the following methods:
 
 -   [x] [structure](#a-structure-of-a-weighted-graph)
--   [x] [add node](#a-add-node)
--   [x] [add edge](#a-add-edge)
--   [x] [shortest path](#a-shortest-path)
--   [x] [has cycle](#a-has-cycle)
--   [x] [minimum spanning tree](#a-minimum-spanning-tree)
--   [x] [contains node](#a-contains-node)
+-   [x] [addNode](#a-addnode)
+-   [x] [addEdge](#a-addedge)
+-   [x] [shortestPath](#a-shortestpath)
+-   [x] [hasCycle](#a-hascycle)
+-   [x] [minimumSpanningTree](#a-minimumspanningtree)
+-   [x] [containsNode](#a-containsnode)
 
 ---
 
@@ -113,7 +113,7 @@ public class WeightedGraph {
 
 ---
 
-#### A: add node
+#### A: addNode
 
 ```Java
 public void addNode(String label) {
@@ -123,7 +123,7 @@ public void addNode(String label) {
 
 ---
 
-#### A: add edge
+#### A: addEdge
 
 ```Java
 public void addEdge(String from, String to, int weight) {
@@ -142,7 +142,7 @@ public void addEdge(String from, String to, int weight) {
 
 ---
 
-#### A: shortest path
+#### A: shortestPath
 
 ```Java
 private Path buildPath(Map<Node, Node> previousNodes, Node toNode) {
@@ -161,7 +161,7 @@ private Path buildPath(Map<Node, Node> previousNodes, Node toNode) {
     return path;
 }
 
-public Path getShortestPath(String from, String to) {
+public Path shortestPath(String from, String to) {
     var fromNode = nodes.get(from);
     if (fromNode == null)
         throw new IllegalArgumentException();
@@ -206,7 +206,7 @@ public Path getShortestPath(String from, String to) {
 
 ---
 
-#### A: has cycle
+#### A: hasCycle
 
 ```Java
 public boolean hasCycle() {
@@ -238,10 +238,10 @@ private boolean hasCycle(Node node, Node parent, Set<Node> visited) {
 
 ---
 
-#### A: minimum spanning tree
+#### A: minimumSpanningTree
 
 ```Java
-public WeightedGraph getMinimumSpanningTree() {
+public WeightedGraph minimumSpanningTree() {
     var tree = new WeightedGraph();
 
     if (nodes.isEmpty())
@@ -279,7 +279,7 @@ public WeightedGraph getMinimumSpanningTree() {
 
 ---
 
-#### A: contains node
+#### A: containsNode
 
 ```Java
 public boolean containsNode(String label) {

@@ -20,6 +20,7 @@
 
 #### Q: Create a Trie is composed of the following methods:
 
+-   [x] [structure](#a-structure-of-a-trie)
 -   [x] [insert](#a-insert)
 -   [x] [remove](#a-remove)
 -   [x] [contains](#a-contains)

@@ -73,15 +73,15 @@
 #### Q: Create a Graph is composed of the following methods:
 
 -   [x] [structure](#a-structure-of-a-graph)
--   [x] [add node](#a-add-node)
--   [x] [add edge](#a-add-edge)
--   [x] [remove node](#a-remove-node)
--   [x] [remove edge](#a-remove-edge)
--   [x] [traverse depth first - recursive](#a-traverse-depth-first---recursive)
--   [x] [traverse depth first - iterative](#a-traverse-depth-first---iterative)
--   [x] [traverse breadth first](#a-traverse-breadth-first)
--   [x] [topological sort](#a-topological-sort)
--   [x] [has cycle](#a-has-cycle)
+-   [x] [addNode](#a-addnode)
+-   [x] [addEdge](#a-addedge)
+-   [x] [removeNode](#a-removenode)
+-   [x] [removeEdge](#a-removeedge)
+-   [x] [traverseDepthFirst](#a-traversedepthfirst---recursive) - recursive
+-   [x] [traverseDepthFirst](#a-traversedepthfirst---iterative) - iterative
+-   [x] [traverseBreadthFirst](#a-traversebreadthfirst)
+-   [x] [topologicalSort](#a-topologicalsort)
+-   [x] [hasCycle](#a-hascycle)
 
 ---
 
@@ -117,7 +117,7 @@ public class Graph {
 
 ---
 
-#### A: add node
+#### A: addNode
 
 ```Java
 public void addNode(String label) {
@@ -129,7 +129,7 @@ public void addNode(String label) {
 
 ---
 
-#### A: add edge
+#### A: addEdge
 
 ```Java
 public void addEdge(String from, String to) {
@@ -147,7 +147,7 @@ public void addEdge(String from, String to) {
 
 ---
 
-#### A: remove node
+#### A: removeNode
 
 ```Java
 public void removeNode(String label) {
@@ -165,7 +165,7 @@ public void removeNode(String label) {
 
 ---
 
-#### A: remove edge
+#### A: removeEdge
 
 ```Java
 public void removeEdge(String from, String to) {
@@ -181,7 +181,7 @@ public void removeEdge(String from, String to) {
 
 ---
 
-#### A: traverse depth first - recursive
+#### A: traverseDepthFirst - recursive
 
 ```Java
 // Recursive
@@ -205,7 +205,7 @@ private void traverseDepthFirst(Node root, Set<Node> visited) {
 
 ---
 
-#### A: traverse depth first - iterative
+#### A: traverseDepthFirst - iterative
 
 ```Java
 // Iterative
@@ -237,7 +237,7 @@ public void traverseDepthFirst(String root) {
 
 ---
 
-#### A: traverse breadth first
+#### A: traverseBreadthFirst
 
 ```Java
 public void traverseBreadthFirst(String root) {
@@ -268,7 +268,7 @@ public void traverseBreadthFirst(String root) {
 
 ---
 
-#### A: topological sort
+#### A: topologicalSort
 
 ```Java
 public List<String> topologicalSort() {
@@ -300,7 +300,7 @@ private void topologicalSort(Node node, Set<Node> visited, Stack<Node> stack) {
 
 ---
 
-#### A: has cycle
+#### A: hasCycle
 
 ```Java
 public boolean hasCycle() {
