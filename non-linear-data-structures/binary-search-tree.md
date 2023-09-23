@@ -37,13 +37,13 @@
 #### Q: Create a Binary Search Tree is composed of the following methods:
 
 -   [x] [structure](#a-structure-of-a-binary-search-tree)
--   [x] [insert](#a-insert)
 -   [x] [contains](#a-contains)
 -   [x] [min ✸](#a-min)
 -   [x] [max ✸](#a-max)
 
 ###### The rest methods are available and are the same with Binary Tree methods
 
+-   [ ] [insert](./binary-tree.md#a-insert)
 -   [ ] [pre-order](./binary-tree.md#a-pre-order)
 -   [ ] [in-order](./binary-tree.md#a-in-order-asc) - ASC
 -   [ ] [in-order](./binary-tree.md#a-in-order-desc) - DESC
@@ -82,38 +82,6 @@ public class BinarySearchTree {
     }
 
     private Node root;
-}
-```
-
----
-
-#### A: insert
-
-```Java
-public void insert(int value) {
-    var node = new Node(value);
-
-    if (root == null) {
-      root = node;
-      return;
-    }
-
-    var current = root;
-    while (true) {
-        if (value <= current.value) {
-            if (current.leftChild == null) {
-                current.leftChild = node;
-                break;
-            }
-            current = current.leftChild;
-        } else {
-            if (current.rightChild == null) {
-                current.rightChild = node;
-                break;
-            }
-            current = current.rightChild;
-        }
-    }
 }
 ```
 
